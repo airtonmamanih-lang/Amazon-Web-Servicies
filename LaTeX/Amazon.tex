@@ -1,4 +1,161 @@
-\documentclass{article}
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{xcolor}
+\usepackage{setspace}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{graphicx}
+\usepackage{tocloft}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue
+}
+
+\setlength{\parindent}{1.5em}
+\onehalfspacing
+\setlength{\cftbeforesecskip}{6pt}
+\renewcommand{\contentsname}{Índice}
+
+\definecolor{azulnoche}{RGB}{0,40,90}
+\definecolor{celesteclaro}{RGB}{224,240,255}
+\definecolor{grisclaro}{RGB}{245,245,245}
+\definecolor{darkgreen}{rgb}{0.533, 0.486, 0.184}
+\definecolor{golden}{RGB}{197,160,89}
+\definecolor{goldford}{RGB}{143,113,54}
+\definecolor{rojo}{RGB}{166,25,46}
+
+%-----------------------------------
+% Color del índice
+%-----------------------------------
+
+% Títulos del índice
+\renewcommand{\cftsecfont}{\color{azulnoche}\bfseries\itshape}
+\renewcommand{\cftsubsecfont}{\color{azulnoche}\bfseries\itshape}
+\renewcommand{\cftsubsubsecfont}{\color{azulnoche}\bfseries\itshape}
+
+% Números de página
+\renewcommand{\cftsecpagefont}{\color{azulnoche}}
+\renewcommand{\cftsubsecpagefont}{\color{azulnoche}}
+\renewcommand{\cftsubsubsecpagefont}{\color{azulnoche}}
+
+% Color de la numeración (1, 2, 2.1, 2.4.3...)
+\renewcommand{\cftsecpresnum}{\color{azulnoche}}
+\renewcommand{\cftsubsecpresnum}{\color{azulnoche}}
+\renewcommand{\cftsubsubsecpresnum}{\color{azulnoche}}
+
+% Restaurar el color después del número
+\renewcommand{\cftsecaftersnum}{\color{azulnoche}}
+\renewcommand{\cftsubsecaftersnum}{\color{azulnoche}}
+\renewcommand{\cftsubsubsecaftersnum}{\color{azulnoche}}
+
 \begin{document}
-Hello, World!
+
+\begin{titlepage}
+\centering
+{\color{golden}\bfseries\large UNIVERSIDAD NACIONAL MAYOR DE SAN MARCOS}\\
+\vspace{0.1cm}
+{\color{golden}\large\textbf{Universidad del Perú, Decana de América}}\\
+\vspace{0.5cm}
+\includegraphics[width=0.35\textwidth]{oso.png}\\
+\vspace{0.5cm}
+{\color{goldford}\scshape\Large Facultad de Ingeniería de Sistemas e Informática\\}
+{\color{goldford}\scshape\large Escuela Profesional de Ingeniería de Sistemas\\}
+\vspace{0.56cm}
+\color{rojo}\hrule height 0.3mm\vspace{0.5cm}
+{\color{rojo}\Large\bfseries MONOGRAFÍA: AWS\vspace{0.56cm}}\\
+\color{rojo}\hrule height 0.3mm\vspace{0.5cm}
+{\color{rojo}\Large\textbf{Curso:}}\\
+\vspace{0.1cm}
+{\color{goldford}\Large Introducción a la Computación}\\
+\vspace{0.5cm}
+{\color{rojo}\Large\textbf{Docente:}}\\
+\vspace{0.1cm}
+{\color{goldford}\Large Gelber Christian Uscuchagua Flores}\\
+\vspace{0.5cm}
+{\color{rojo}\Large\textbf{Integrantes:}}\\
+\vspace{0.1cm}
+{\color{goldford}\Large Mamani Huahualuque, Airton Abedal}\\
+{\color{goldford}\Large Mundo Dominguez, Adair Andre}\\
+{\color{goldford}\Large Cruz Mora, Angel Josue}\\
+{\color{goldford}\Large Flores Villalba, Gianella Alexandra}\\
+\vspace{0.5cm}
+{\color{rojo}\Large\textbf{Grupo:}}\\
+\vspace{0.1cm}
+{\color{goldford}\Large Gitverso - UscuchaguaLovers}\\
+\vspace{1.4cm}
+{\color{goldford}\Large\textbf{Lima, 04 de Julio del 2026}}\\
+\end{titlepage}
+
+% ==============================
+% ÍNDICE
+% ==============================
+\tableofcontents
+\newpage
+
+% ==============================
+% CONTENIDO
+% ==============================
+
+\section{{\color{azulnoche}\textbf{\textit{Introducción}}}}
+\newpage
+
+\section{{\color{azulnoche}\textbf{\textit{Capítulo I}}}}
+\subsection{{\color{azulnoche}\textbf{\textit{Contexto histórico}}}}
+
+\subsection{{\color{azulnoche}\textbf{\textit{El nacimiento de AWS}}}}
+
+\subsection{{\color{azulnoche}\textbf{\textit{Conceptos fundamentales del Cloud Computing}}}}
+
+\subsection{{\color{azulnoche}\textbf{\textit{Modelos de despliegue de la nube}}}}
+\newpage
+
+\section{{\color{azulnoche}\textbf{\textit{Capítulo II}}}}
+\subsection{{\color{azulnoche}\textbf{\textit{Topología de la Infraestructura Mundial}}}}
+
+\subsection{{\color{azulnoche}\textbf{\textit{Ingeniería de los Centros de Datos}}}}
+
+\subsection{{\color{azulnoche}\textbf{\textit{Virtualización Avanzada}}}}
+
+\subsection{{\color{azulnoche}\textbf{\textit{Catálogo de Servicios Pilares}}}}
+\subsubsection{{\color{azulnoche}\textbf{\textit{Cómputo}}}}
+
+\subsubsection{{\color{azulnoche}\textbf{\textit{Almacenamiento}}}}
+
+\subsubsection{{\color{azulnoche}\textbf{\textit{Bases de Datos}}}}
+
+\subsection{{\color{azulnoche}\textbf{\textit{Modelo de la Responsabilidad Compartida en Seguridad y Redes}}}}
+\newpage
+
+\section{{\color{azulnoche}\textbf{\textit{Capítulo III}}}}
+\subsection{{\color{azulnoche}\textbf{\textit{AWS como Motor de la Economía Digital}}}}
+\subsection{{\color{azulnoche}\textbf{\textit{Innovación en Silicio Propio}}}}
+\subsection{{\color{azulnoche}\textbf{\textit{La Frontera de la Inteligencia Artificial Generativa}}}}
+\subsection{{\color{azulnoche}\textbf{\textit{Proyectos Disruptivos y Planes Futuros}}}}
+\subsection{{\color{azulnoche}\textbf{\textit{Principios de Liderazgo y Sostenibilidad Ambiental}}}}
+\newpage
+
+\section{{\color{azulnoche}\textbf{\textit{Capítulo IV}}}}
+\subsection{{\color{azulnoche}\textbf{\textit{Análisis de Cuota de Mercado Global y Concentración del Poder Tecnológico}}}}
+
+\subsection{{\color{azulnoche}\textbf{\textit{Riesgos Arquitectónicos y Financieros}}}}
+
+\subsection{{\color{azulnoche}\textbf{\textit{Fragilidad Sistémica}}}}
+
+\subsection{{\color{azulnoche}\textbf{\textit{Debate Monopólico}}}}
+
+\subsection{{\color{azulnoche}\textbf{\textit{Perspectivas Regulatorias}}}}
+\newpage
+
+\section{{\color{azulnoche}\textbf{\textit{Conclusiones}}}}
+\newpage
+
+\section{{\color{azulnoche}\textbf{\textit{Referencias Bibliográficas}}}}
+\newpage
+
+\section{{\color{azulnoche}\textbf{\textit{Anexos}}}}
+
 \end{document}
