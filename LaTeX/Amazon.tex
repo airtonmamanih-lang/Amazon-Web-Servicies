@@ -1,14 +1,45 @@
 \documentclass[12pt,a4paper]{article}
+\usepackage{newtxtext,newtxmath}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[margin=2.5cm]{geometry}
+\usepackage[
+backend=biber,
+style=apa
+]{biblatex}
+
+\addbibresource{referencias.bib}
 \usepackage{xcolor}
 \usepackage{setspace}
-\usepackage{array}
+\usepackage{csquotes}
+\usepackage{titlesec}
+\titleformat{\section}
+{\Huge\bfseries\color{azulnoche}}
+{\thesection}
+{1em}
+{}
+
+\titleformat{\subsection}
+{\Large\bfseries\color{rojo}}
+{\thesubsection}
+{1em}
+{}
+
+\titleformat{\subsubsection}
+{\large\bfseries\color{goldford}}
+{\thesubsubsection}
+{1em}
+{}
 \usepackage{colortbl}
 \usepackage{graphicx}
+\usepackage{booktabs}
 \usepackage{tocloft}
 \usepackage{hyperref}
+\usepackage[spanish]{babel}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{tabularx}
+\usepackage{array}
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,
@@ -28,26 +59,19 @@
 \definecolor{goldford}{RGB}{143,113,54}
 \definecolor{rojo}{RGB}{166,25,46}
 
-%-----------------------------------
-% Color del índice
-%-----------------------------------
 
-% Títulos del índice
 \renewcommand{\cftsecfont}{\color{azulnoche}\bfseries\itshape}
 \renewcommand{\cftsubsecfont}{\color{azulnoche}\bfseries\itshape}
 \renewcommand{\cftsubsubsecfont}{\color{azulnoche}\bfseries\itshape}
 
-% Números de página
 \renewcommand{\cftsecpagefont}{\color{azulnoche}}
 \renewcommand{\cftsubsecpagefont}{\color{azulnoche}}
 \renewcommand{\cftsubsubsecpagefont}{\color{azulnoche}}
 
-% Color de la numeración (1, 2, 2.1, 2.4.3...)
 \renewcommand{\cftsecpresnum}{\color{azulnoche}}
 \renewcommand{\cftsubsecpresnum}{\color{azulnoche}}
 \renewcommand{\cftsubsubsecpresnum}{\color{azulnoche}}
 
-% Restaurar el color después del número
 \renewcommand{\cftsecaftersnum}{\color{azulnoche}}
 \renewcommand{\cftsubsecaftersnum}{\color{azulnoche}}
 \renewcommand{\cftsubsubsecaftersnum}{\color{azulnoche}}
@@ -114,20 +138,261 @@
 \newpage
 
 \section{{\color{azulnoche}\textbf{\textit{Capítulo II}}}}
+La infraestructura de Amazon Web Services (AWS) constituye uno de los ecosistemas de computación en la nube más grandes del mundo. Su arquitectura está diseñada para proporcionar alta disponibilidad, escalabilidad, seguridad y tolerancia a fallos mediante una red global de centros de datos distribuidos estratégicamente. En este capítulo se describen los principales componentes de la infraestructura de AWS, la ingeniería de sus centros de datos, la tecnología de virtualización utilizada, los principales servicios que ofrece y el modelo de responsabilidad compartida en materia de seguridad.
+
 \subsection{{\color{azulnoche}\textbf{\textit{Topología de la Infraestructura Mundial}}}}
+
+La infraestructura mundial de Amazon Web Services (AWS) está conformada por una red global de centros de datos distribuidos estratégicamente en distintos continentes. Esta infraestructura permite que las aplicaciones y servicios operen con baja latencia, alta disponibilidad y redundancia, garantizando la continuidad del servicio incluso ante fallas de hardware o desastres naturales.
+
+La arquitectura global de AWS se basa en diferentes componentes, entre ellos las Regiones (\textit{Regions}), las Zonas de Disponibilidad (\textit{Availability Zones}), las Local Zones y las Edge Locations. Cada uno cumple una función específica para optimizar el rendimiento, la disponibilidad y la cercanía con los usuarios finales.
+
+El diseño distribuido de AWS permite que los recursos puedan replicarse entre diferentes zonas y regiones, facilitando la recuperación ante desastres y el balanceo de carga.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.95\textwidth]{regiones.png}
+\caption{Infraestructura mundial de AWS: regiones y zonas de disponibilidad.}
+\label{fig:regiones}
+\end{figure}
+
+\begin{table}[H]
+\centering
+\caption{Componentes de la infraestructura mundial de AWS}
+\begin{tabularx}{\textwidth}{lXX}
+\toprule
+\textbf{Componente} & \textbf{Descripción} & \textbf{Función}\\
+\midrule
+Región (Region) & Área geográfica donde AWS posee centros de datos. & Alojar servicios y recursos.\\
+
+Zona de Disponibilidad (AZ) & Uno o varios centros de datos independientes dentro de una región. & Garantizar alta disponibilidad.\\
+
+Local Zone & Extensión de una región ubicada cerca de grandes ciudades. & Reducir la latencia.\\
+
+Edge Location & Centros de distribución utilizados por CloudFront y Route 53. & Entrega rápida de contenido.\\
+
+Backbone Global & Red privada de fibra óptica de AWS. & Comunicación segura entre regiones.\\
+\bottomrule
+\end{tabularx}
+\end{table}
 
 \subsection{{\color{azulnoche}\textbf{\textit{Ingeniería de los Centros de Datos}}}}
 
+Los centros de datos de AWS están diseñados siguiendo estrictos estándares internacionales de seguridad, disponibilidad y eficiencia energética. Cada instalación incorpora sistemas redundantes de energía eléctrica, refrigeración, conectividad y almacenamiento para minimizar el riesgo de interrupciones del servicio.
+
+La infraestructura física emplea controles de acceso biométricos, monitoreo permanente mediante cámaras de vigilancia y personal especializado disponible las 24 horas del día. Además, AWS implementa sistemas automáticos de detección y extinción de incendios, así como mecanismos de respaldo energético mediante UPS y generadores eléctricos.
+
+Otro aspecto importante es la eficiencia energética. AWS optimiza continuamente el consumo de energía mediante tecnologías avanzadas de refrigeración y el uso creciente de fuentes de energía renovables.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.90\textwidth]{datacc.png}
+\caption{Centro de datos de Amazon Web Services.}
+\label{fig:datacenter}
+\end{figure}
+
+\begin{table}[H]
+\centering
+\caption{Características de los centros de datos de AWS}
+\begin{tabularx}{\textwidth}{lX}
+\toprule
+\textbf{Característica} & \textbf{Descripción}\\
+\midrule
+Seguridad física & Acceso biométrico, vigilancia permanente y control de ingreso.\\
+
+Redundancia eléctrica & UPS, generadores y múltiples fuentes de alimentación.\\
+
+Refrigeración & Sistemas inteligentes para mantener temperaturas óptimas.\\
+
+Conectividad & Múltiples enlaces de red de alta velocidad.\\
+
+Monitoreo & Supervisión continua de infraestructura y servicios.\\
+
+Escalabilidad & Posibilidad de ampliar recursos sin interrupciones.\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
 \subsection{{\color{azulnoche}\textbf{\textit{Virtualización Avanzada}}}}
 
+La virtualización constituye una de las tecnologías fundamentales sobre las que se basa Amazon Web Services. Esta técnica permite ejecutar múltiples máquinas virtuales sobre un mismo servidor físico, optimizando el uso de los recursos computacionales y reduciendo los costos operativos.
+
+AWS utiliza principalmente el sistema AWS Nitro, una plataforma que integra hardware y software especializado para mejorar el rendimiento, la seguridad y el aislamiento entre instancias. Gracias a esta arquitectura, los usuarios pueden crear servidores virtuales en cuestión de minutos, escalarlos automáticamente y administrar cargas de trabajo de diferentes tamaños.
+
+La virtualización también facilita la automatización de recursos, la recuperación ante fallos y el despliegue rápido de aplicaciones.
+
+\begin{table}[H]
+\centering
+\caption{Tipos de virtualización utilizados por AWS}
+\begin{tabularx}{\textwidth}{lXX}
+\toprule
+\textbf{Tipo} & \textbf{Descripción} & \textbf{Servicio}\\
+\midrule
+Virtualización de servidores & Divide un servidor físico en varias máquinas virtuales. & Amazon EC2\\
+
+Virtualización de almacenamiento & Agrupa varios discos físicos como una sola unidad lógica. & Amazon EBS\\
+
+Virtualización de redes & Redes definidas por software. & Amazon VPC\\
+
+Virtualización de escritorios & Escritorios virtuales administrados. & Amazon WorkSpaces\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
 \subsection{{\color{azulnoche}\textbf{\textit{Catálogo de Servicios Pilares}}}}
+
+Amazon Web Services ofrece más de doscientos servicios en la nube. Entre ellos destacan tres pilares fundamentales para el funcionamiento de cualquier infraestructura tecnológica: cómputo, almacenamiento y bases de datos.
+
 \subsubsection{{\color{azulnoche}\textbf{\textit{Cómputo}}}}
+
+Los servicios de cómputo proporcionan capacidad de procesamiento para ejecutar aplicaciones, sitios web, servicios empresariales y algoritmos de inteligencia artificial. AWS permite aprovisionar recursos bajo demanda y pagar únicamente por el tiempo utilizado.
+
+Estos servicios pueden escalar automáticamente según la demanda, permitiendo responder de manera eficiente a incrementos en el tráfico de usuarios.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.60\textwidth]{computo.jpg}
+\caption{Principales servicios de cómputo de AWS.}
+\label{fig:computo}
+\end{figure}
+
+\begin{table}[H]
+\centering
+\caption{Servicios de cómputo de AWS}
+\begin{tabularx}{\textwidth}{lX}
+\toprule
+\textbf{Servicio} & \textbf{Función}\\
+\midrule
+Amazon EC2 & Máquinas virtuales bajo demanda.\\
+
+AWS Lambda & Ejecución de funciones sin administrar servidores.\\
+
+Elastic Beanstalk & Implementación automática de aplicaciones.\\
+
+Amazon ECS & Administración de contenedores Docker.\\
+
+Amazon EKS & Kubernetes administrado.\\
+
+Amazon Lightsail & Infraestructura simplificada para pequeñas aplicaciones.\\
+\bottomrule
+\end{tabularx}
+\end{table}
 
 \subsubsection{{\color{azulnoche}\textbf{\textit{Almacenamiento}}}}
 
+Los servicios de almacenamiento permiten guardar información de manera segura, escalable y altamente disponible. AWS ofrece diferentes alternativas según las necesidades de cada aplicación, incluyendo almacenamiento por objetos, bloques y sistemas de archivos compartidos.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth]{almacenamiento.jpg}
+\caption{Tipos de almacenamiento disponibles en AWS.}
+\label{fig:almacenamiento}
+\end{figure}
+
+\begin{table}[H]
+\centering
+\caption{Servicios de almacenamiento de AWS}
+\begin{tabularx}{\textwidth}{lXX}
+\toprule
+\textbf{Servicio} & \textbf{Tipo} & \textbf{Uso principal}\\
+\midrule
+Amazon S3 & Objetos & Archivos, imágenes y copias de seguridad.\\
+
+Amazon EBS & Bloques & Discos virtuales para EC2.\\
+
+Amazon EFS & Archivos & Sistemas Linux compartidos.\\
+
+AWS Backup & Respaldo & Copias de seguridad automáticas.\\
+
+Amazon FSx & Archivos & Sistemas Windows y Lustre.\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
 \subsubsection{{\color{azulnoche}\textbf{\textit{Bases de Datos}}}}
 
+AWS proporciona servicios administrados para bases de datos relacionales y NoSQL, permitiendo almacenar grandes volúmenes de información con alta disponibilidad y escalabilidad. La administración automática reduce la carga operativa de los administradores de bases de datos.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\textwidth]{basedato.png}
+\caption{Servicios administrados de bases de datos en AWS.}
+\label{fig:basedatos}
+\end{figure}
+
+\begin{table}[H]
+\centering
+\caption{Servicios de bases de datos de AWS}
+\begin{tabularx}{\textwidth}{lXX}
+\toprule
+\textbf{Servicio} & \textbf{Tipo} & \textbf{Aplicación}\\
+\midrule
+Amazon RDS & Relacional & Aplicaciones empresariales.\\
+
+Amazon Aurora & Relacional & Alto rendimiento compatible con MySQL y PostgreSQL.\\
+
+Amazon DynamoDB & NoSQL & Aplicaciones web y móviles.\\
+
+Amazon Redshift & Data Warehouse & Inteligencia de negocios.\\
+
+Amazon ElastiCache & Caché & Aceleración de aplicaciones.\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
 \subsection{{\color{azulnoche}\textbf{\textit{Modelo de la Responsabilidad Compartida en Seguridad y Redes}}}}
+
+Uno de los principios fundamentales de AWS es el modelo de responsabilidad compartida, el cual define claramente las responsabilidades que corresponden al proveedor de servicios en la nube y aquellas que deben ser asumidas por el cliente.
+
+AWS es responsable de proteger la infraestructura física que soporta los servicios en la nube, incluyendo los centros de datos, el hardware, la red física y el software de virtualización. Por otro lado, el cliente es responsable de proteger sus datos, administrar los accesos de usuarios, configurar adecuadamente los servicios utilizados y mantener actualizados sus sistemas operativos cuando corresponda.
+
+Este modelo permite que ambas partes colaboren para garantizar un entorno seguro y confiable.
+
+\begin{table}[H]
+\centering
+\caption{Modelo de responsabilidad compartida}
+\begin{tabularx}{\textwidth}{XX}
+\toprule
+\textbf{Responsabilidad de AWS} & \textbf{Responsabilidad del Cliente}\\
+\midrule
+Protección de centros de datos & Protección de los datos\\
+
+Infraestructura física & Administración de usuarios\\
+
+Hardware y almacenamiento & Configuración de servicios\\
+
+Red física & Actualización del sistema operativo\\
+
+Hipervisor y plataforma & Gestión de permisos y políticas IAM\\
+
+Disponibilidad global & Cifrado de la información\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Resumen del Capítulo II}
+\begin{tabularx}{\textwidth}{lXX}
+\toprule
+\textbf{Sección} & \textbf{Tema principal} & \textbf{Servicios relacionados}\\
+\midrule
+3.1 & Infraestructura mundial & Regiones, AZ, Edge Locations\\
+
+3.2 & Centros de datos & Seguridad física y redundancia\\
+
+3.3 & Virtualización & EC2, Nitro, VPC\\
+
+3.4.1 & Cómputo & EC2, Lambda, ECS, EKS\\
+
+3.4.2 & Almacenamiento & S3, EBS, EFS\\
+
+3.4.3 & Bases de datos & RDS, Aurora, DynamoDB\\
+
+3.5 & Seguridad & IAM, cifrado y responsabilidad compartida\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
 \newpage
 
 \section{{\color{azulnoche}\textbf{\textit{Capítulo III}}}}
@@ -136,6 +401,7 @@
 \subsection{{\color{azulnoche}\textbf{\textit{La Frontera de la Inteligencia Artificial Generativa}}}}
 \subsection{{\color{azulnoche}\textbf{\textit{Proyectos Disruptivos y Planes Futuros}}}}
 \subsection{{\color{azulnoche}\textbf{\textit{Principios de Liderazgo y Sostenibilidad Ambiental}}}}
+
 \newpage
 
 \section{{\color{azulnoche}\textbf{\textit{Capítulo IV}}}}
