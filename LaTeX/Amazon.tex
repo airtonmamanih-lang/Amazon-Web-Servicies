@@ -142,7 +142,7 @@ La infraestructura de Amazon Web Services (AWS) constituye uno de los ecosistema
 
 \subsection{{\color{azulnoche}\textbf{\textit{Topología de la Infraestructura Mundial}}}}
 
-La infraestructura mundial de Amazon Web Services (AWS) está conformada por una red global de centros de datos distribuidos estratégicamente en distintos continentes. Esta infraestructura permite que las aplicaciones y servicios operen con baja latencia, alta disponibilidad y redundancia, garantizando la continuidad del servicio incluso ante fallas de hardware o desastres naturales.
+La infraestructura mundial de Amazon Web Services (AWS) está conformada por una red global de centros de datos distribuidos estratégicamente en distintos continentes. Esta infraestructura permite que las aplicaciones y servicios operen con baja latencia, alta disponibilidad y redundancia, garantizando la continuidad del servicio incluso ante fallas de hardware o desastres naturales\parencite{awsInfrastructure}.
 
 La arquitectura global de AWS se basa en diferentes componentes, entre ellos las Regiones (\textit{Regions}), las Zonas de Disponibilidad (\textit{Availability Zones}), las Local Zones y las Edge Locations. Cada uno cumple una función específica para optimizar el rendimiento, la disponibilidad y la cercanía con los usuarios finales.
 
@@ -177,11 +177,11 @@ Backbone Global & Red privada de fibra óptica de AWS. & Comunicación segura en
 
 \subsection{{\color{azulnoche}\textbf{\textit{Ingeniería de los Centros de Datos}}}}
 
-Los centros de datos de AWS están diseñados siguiendo estrictos estándares internacionales de seguridad, disponibilidad y eficiencia energética. Cada instalación incorpora sistemas redundantes de energía eléctrica, refrigeración, conectividad y almacenamiento para minimizar el riesgo de interrupciones del servicio.
+Los centros de datos de AWS están diseñados siguiendo estrictos estándares internacionales de seguridad, disponibilidad y eficiencia energética\parencite{awsDatacenters}. Cada instalación incorpora sistemas redundantes de energía eléctrica, refrigeración, conectividad y almacenamiento para minimizar el riesgo de interrupciones del servicio.
 
 La infraestructura física emplea controles de acceso biométricos, monitoreo permanente mediante cámaras de vigilancia y personal especializado disponible las 24 horas del día. Además, AWS implementa sistemas automáticos de detección y extinción de incendios, así como mecanismos de respaldo energético mediante UPS y generadores eléctricos.
 
-Otro aspecto importante es la eficiencia energética. AWS optimiza continuamente el consumo de energía mediante tecnologías avanzadas de refrigeración y el uso creciente de fuentes de energía renovables.
+Otro aspecto importante es la eficiencia energética. AWS optimiza continuamente el consumo de energía mediante tecnologías avanzadas de refrigeración y el uso creciente de fuentes de energía renovables \parencite{awsSustainability}.
 
 \begin{figure}[H]
 \centering
@@ -214,9 +214,9 @@ Escalabilidad & Posibilidad de ampliar recursos sin interrupciones.\\
 
 \subsection{{\color{azulnoche}\textbf{\textit{Virtualización Avanzada}}}}
 
-La virtualización constituye una de las tecnologías fundamentales sobre las que se basa Amazon Web Services. Esta técnica permite ejecutar múltiples máquinas virtuales sobre un mismo servidor físico, optimizando el uso de los recursos computacionales y reduciendo los costos operativos.
+La virtualización constituye una de las tecnologías fundamentales sobre las que se basa Amazon Web Services\parencite{awsNitro}. Esta técnica permite ejecutar múltiples máquinas virtuales sobre un mismo servidor físico, optimizando el uso de los recursos computacionales y reduciendo los costos operativos.
 
-AWS utiliza principalmente el sistema AWS Nitro, una plataforma que integra hardware y software especializado para mejorar el rendimiento, la seguridad y el aislamiento entre instancias. Gracias a esta arquitectura, los usuarios pueden crear servidores virtuales en cuestión de minutos, escalarlos automáticamente y administrar cargas de trabajo de diferentes tamaños.
+AWS utiliza principalmente el sistema AWS Nitro, una plataforma que integra hardware y software especializado para mejorar el rendimiento, la seguridad y el aislamiento entre instancias. Gracias a esta arquitectura, los usuarios pueden crear servidores virtuales en cuestión de minutos, escalarlos automáticamente y administrar cargas de trabajo de diferentes tamaños\parencite{awsNitro}.
 
 La virtualización también facilita la automatización de recursos, la recuperación ante fallos y el despliegue rápido de aplicaciones.
 
@@ -244,7 +244,7 @@ Amazon Web Services ofrece más de doscientos servicios en la nube. Entre ellos 
 
 \subsubsection{{\color{azulnoche}\textbf{\textit{Cómputo}}}}
 
-Los servicios de cómputo proporcionan capacidad de procesamiento para ejecutar aplicaciones, sitios web, servicios empresariales y algoritmos de inteligencia artificial. AWS permite aprovisionar recursos bajo demanda y pagar únicamente por el tiempo utilizado.
+Los servicios de cómputo proporcionan capacidad de procesamiento para ejecutar aplicaciones, sitios web, servicios empresariales y algoritmos de inteligencia artificial. AWS permite aprovisionar recursos bajo demanda y pagar únicamente por el tiempo utilizado\parencite{amazonEC2}.
 
 Estos servicios pueden escalar automáticamente según la demanda, permitiendo responder de manera eficiente a incrementos en el tráfico de usuarios.
 
@@ -279,7 +279,7 @@ Amazon Lightsail & Infraestructura simplificada para pequeñas aplicaciones.\\
 
 \subsubsection{{\color{azulnoche}\textbf{\textit{Almacenamiento}}}}
 
-Los servicios de almacenamiento permiten guardar información de manera segura, escalable y altamente disponible. AWS ofrece diferentes alternativas según las necesidades de cada aplicación, incluyendo almacenamiento por objetos, bloques y sistemas de archivos compartidos.
+Los servicios de almacenamiento permiten guardar información de manera segura, escalable y altamente disponible. AWS ofrece diferentes alternativas según las necesidades de cada aplicación, incluyendo almacenamiento por objetos, bloques y sistemas de archivos compartidos\parencite{amazonS3}.
 
 \begin{figure}[H]
 \centering
@@ -310,7 +310,7 @@ Amazon FSx & Archivos & Sistemas Windows y Lustre.\\
 
 \subsubsection{{\color{azulnoche}\textbf{\textit{Bases de Datos}}}}
 
-AWS proporciona servicios administrados para bases de datos relacionales y NoSQL, permitiendo almacenar grandes volúmenes de información con alta disponibilidad y escalabilidad. La administración automática reduce la carga operativa de los administradores de bases de datos.
+AWS proporciona servicios administrados para bases de datos relacionales y NoSQL, permitiendo almacenar grandes volúmenes de información con alta disponibilidad y escalabilidad. La administración automática reduce la carga operativa de los administradores de bases de datos\parencite{amazonRDS}.
 
 \begin{figure}[H]
 \centering
@@ -420,6 +420,8 @@ Disponibilidad global & Cifrado de la información\\
 \newpage
 
 \section{{\color{azulnoche}\textbf{\textit{Referencias Bibliográficas}}}}
+\nocite{*} % <--- ESTA LÍNEA OBLIGA A MOSTRAR TODO LO QUE HAYA EN EL .BIB
+\printbibliography[heading=none]
 \newpage
 
 \section{{\color{azulnoche}\textbf{\textit{Anexos}}}}
