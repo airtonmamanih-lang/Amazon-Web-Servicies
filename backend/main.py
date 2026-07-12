@@ -31,6 +31,8 @@ class JuegoDTO(BaseModel):
     calificacion: float
     precio: float
     portada_url: Optional[str] = None
+    descripcion: str
+    url_juego: str
 
 # Calculamos la ruta subiendo un nivel y entrando a la carpeta 'datos'
 RUTA_JSON = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "datos", "juegos.json"))
@@ -108,7 +110,7 @@ def filtrar_juegos(
                     print(f"No se pudo obtener portada para {juego.titulo}: {api_err}")
                     juego.portada_url = None 
 
-                # ¡UN SOLO APPEND AL FINAL! Mete el juego ya procesado con su imagen inyectada
+                #  Mete el juego ya procesado con su imagen inyectada
                 coincidencias.append(juego)
                 
         except Exception as e:
