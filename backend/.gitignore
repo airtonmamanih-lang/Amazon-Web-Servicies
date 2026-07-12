@@ -4,3 +4,6 @@ venv/
 
 #ignorar cache de python
 __pycache__/
+
+
+.env
