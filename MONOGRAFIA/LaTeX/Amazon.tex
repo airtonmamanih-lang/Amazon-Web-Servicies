@@ -4,7 +4,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[margin=2.5cm]{geometry}
 \usepackage[
-backend=bibtex, % <--- Aquí haces el cambio
+backend=biber,
 style=apa
 ]{biblatex}
 
@@ -20,30 +20,31 @@ style=apa
 {}
 
 \titleformat{\subsection}
-{\Large\bfseries\color{rojo}}
+{\Large\bfseries\color{azulnoche}}
 {\thesubsection}
 {1em}
 {}
 
 \titleformat{\subsubsection}
-{\large\bfseries\color{goldford}}
+{\large\bfseries\color{azulnoche}}
 {\thesubsubsection}
 {1em}
 {}
 \usepackage{colortbl}
 \usepackage{graphicx}
+\usepackage{caption}
+\captionsetup{compatibility=false}
 \usepackage{booktabs}
 \usepackage{tocloft}
-\usepackage{hyperref}
 \usepackage[spanish]{babel}
-\usepackage{booktabs}
+\usepackage{hyperref}
 \usepackage{float}
 \usepackage{tabularx}
 \usepackage{array}
 \hypersetup{
     colorlinks=true,
-    linkcolor=blue,
-    urlcolor=blue
+    linkcolor=azulnoche,
+    urlcolor=azulnoche
 }
 
 \setlength{\parindent}{1.5em}
@@ -124,23 +125,23 @@ style=apa
 % CONTENIDO
 % ==============================
 
-\section{{\color{azulnoche}\textbf{\textit{Introducción}}}}
+\section{Introducción}
 \newpage
 
-\section{{\color{azulnoche}\textbf{\textit{Capítulo I}}}}
-\subsection{{\color{azulnoche}\textbf{\textit{Contexto histórico}}}}
+\section{Capítulo I}
+\subsection{Contexto histórico}
 
-\subsection{{\color{azulnoche}\textbf{\textit{El nacimiento de AWS}}}}
+\subsection{El nacimiento de AWS}
 
-\subsection{{\color{azulnoche}\textbf{\textit{Conceptos fundamentales del Cloud Computing}}}}
+\subsection{Conceptos fundamentales del Cloud Computing}
 
-\subsection{{\color{azulnoche}\textbf{\textit{Modelos de despliegue de la nube}}}}
+\subsection{Modelos de despliegue de la nube}
 \newpage
 
-\section{{\color{azulnoche}\textbf{\textit{Capítulo II}}}}
+\section{Capítulo II}
 La infraestructura de Amazon Web Services (AWS) constituye uno de los ecosistemas de computación en la nube más grandes del mundo. Su arquitectura está diseñada para proporcionar alta disponibilidad, escalabilidad, seguridad y tolerancia a fallos mediante una red global de centros de datos distribuidos estratégicamente. En este capítulo se describen los principales componentes de la infraestructura de AWS, la ingeniería de sus centros de datos, la tecnología de virtualización utilizada, los principales servicios que ofrece y el modelo de responsabilidad compartida en materia de seguridad.
 
-\subsection{{\color{azulnoche}\textbf{\textit{Topología de la Infraestructura Mundial}}}}
+\subsection{Topología de la Infraestructura Mundial}
 
 La infraestructura mundial de Amazon Web Services (AWS) está conformada por una red global de centros de datos distribuidos estratégicamente en distintos continentes. Esta infraestructura permite que las aplicaciones y servicios operen con baja latencia, alta disponibilidad y redundancia, garantizando la continuidad del servicio incluso ante fallas de hardware o desastres naturales\parencite{awsInfrastructure}.
 
@@ -175,7 +176,7 @@ Backbone Global & Red privada de fibra óptica de AWS. & Comunicación segura en
 \end{tabularx}
 \end{table}
 
-\subsection{{\color{azulnoche}\textbf{\textit{Ingeniería de los Centros de Datos}}}}
+\subsection{Ingeniería de los Centros de Datos}
 
 Los centros de datos de AWS están diseñados siguiendo estrictos estándares internacionales de seguridad, disponibilidad y eficiencia energética\parencite{awsDatacenters}. Cada instalación incorpora sistemas redundantes de energía eléctrica, refrigeración, conectividad y almacenamiento para minimizar el riesgo de interrupciones del servicio.
 
@@ -212,7 +213,7 @@ Escalabilidad & Posibilidad de ampliar recursos sin interrupciones.\\
 \end{tabularx}
 \end{table}
 
-\subsection{{\color{azulnoche}\textbf{\textit{Virtualización Avanzada}}}}
+\subsection{Virtualización Avanzada}
 
 La virtualización constituye una de las tecnologías fundamentales sobre las que se basa Amazon Web Services\parencite{awsNitro}. Esta técnica permite ejecutar múltiples máquinas virtuales sobre un mismo servidor físico, optimizando el uso de los recursos computacionales y reduciendo los costos operativos.
 
@@ -238,11 +239,11 @@ Virtualización de escritorios & Escritorios virtuales administrados. & Amazon W
 \end{tabularx}
 \end{table}
 
-\subsection{{\color{azulnoche}\textbf{\textit{Catálogo de Servicios Pilares}}}}
+\subsection{Catálogo de Servicios Pilares}
 
 Amazon Web Services ofrece más de doscientos servicios en la nube. Entre ellos destacan tres pilares fundamentales para el funcionamiento de cualquier infraestructura tecnológica: cómputo, almacenamiento y bases de datos.
 
-\subsubsection{{\color{azulnoche}\textbf{\textit{Cómputo}}}}
+\subsubsection{Cómputo}
 
 Los servicios de cómputo proporcionan capacidad de procesamiento para ejecutar aplicaciones, sitios web, servicios empresariales y algoritmos de inteligencia artificial. AWS permite aprovisionar recursos bajo demanda y pagar únicamente por el tiempo utilizado\parencite{amazonEC2}.
 
@@ -277,7 +278,7 @@ Amazon Lightsail & Infraestructura simplificada para pequeñas aplicaciones.\\
 \end{tabularx}
 \end{table}
 
-\subsubsection{{\color{azulnoche}\textbf{\textit{Almacenamiento}}}}
+\subsubsection{Almacenamiento}
 
 Los servicios de almacenamiento permiten guardar información de manera segura, escalable y altamente disponible. AWS ofrece diferentes alternativas según las necesidades de cada aplicación, incluyendo almacenamiento por objetos, bloques y sistemas de archivos compartidos\parencite{amazonS3}.
 
@@ -308,7 +309,7 @@ Amazon FSx & Archivos & Sistemas Windows y Lustre.\\
 \end{tabularx}
 \end{table}
 
-\subsubsection{{\color{azulnoche}\textbf{\textit{Bases de Datos}}}}
+\subsubsection{Bases de Datos}
 
 AWS proporciona servicios administrados para bases de datos relacionales y NoSQL, permitiendo almacenar grandes volúmenes de información con alta disponibilidad y escalabilidad. La administración automática reduce la carga operativa de los administradores de bases de datos\parencite{amazonRDS}.
 
@@ -339,7 +340,7 @@ Amazon ElastiCache & Caché & Aceleración de aplicaciones.\\
 \end{tabularx}
 \end{table}
 
-\subsection{{\color{azulnoche}\textbf{\textit{Modelo de la Responsabilidad Compartida en Seguridad y Redes}}}}
+\subsection{Modelo de la Responsabilidad Compartida en Seguridad y Redes}
 
 Uno de los principios fundamentales de AWS es el modelo de responsabilidad compartida, el cual define claramente las responsabilidades que corresponden al proveedor de servicios en la nube y aquellas que deben ser asumidas por el cliente.
 
@@ -395,35 +396,35 @@ Disponibilidad global & Cifrado de la información\\
 
 \newpage
 
-\section{{\color{azulnoche}\textbf{\textit{Capítulo III}}}}
-\subsection{{\color{azulnoche}\textbf{\textit{AWS como Motor de la Economía Digital}}}}
-\subsection{{\color{azulnoche}\textbf{\textit{Innovación en Silicio Propio}}}}
-\subsection{{\color{azulnoche}\textbf{\textit{La Frontera de la Inteligencia Artificial Generativa}}}}
-\subsection{{\color{azulnoche}\textbf{\textit{Proyectos Disruptivos y Planes Futuros}}}}
-\subsection{{\color{azulnoche}\textbf{\textit{Principios de Liderazgo y Sostenibilidad Ambiental}}}}
+\section{Capítulo III}
+\subsection{AWS como Motor de la Economía Digital}
+\subsection{Innovación en Silicio Propio}
+\subsection{La Frontera de la Inteligencia Artificial Generativa}
+\subsection{Proyectos Disruptivos y Planes Futuros}
+\subsection{Principios de Liderazgo y Sostenibilidad Ambiental}
 
 \newpage
 
-\section{{\color{azulnoche}\textbf{\textit{Capítulo IV}}}}
-\subsection{{\color{azulnoche}\textbf{\textit{Análisis de Cuota de Mercado Global y Concentración del Poder Tecnológico}}}}
+\section{Capítulo IV}
+\subsection{Análisis de Cuota de Mercado Global y Concentración del Poder Tecnológico}
 
-\subsection{{\color{azulnoche}\textbf{\textit{Riesgos Arquitectónicos y Financieros}}}}
+\subsection{Riesgos Arquitectónicos y Financieros}
 
-\subsection{{\color{azulnoche}\textbf{\textit{Fragilidad Sistémica}}}}
+\subsection{Fragilidad Sistémica}
 
-\subsection{{\color{azulnoche}\textbf{\textit{Debate Monopólico}}}}
+\subsection{Debate Monopólico}
 
-\subsection{{\color{azulnoche}\textbf{\textit{Perspectivas Regulatorias}}}}
+\subsection{Perspectivas Regulatorias}
 \newpage
 
-\section{{\color{azulnoche}\textbf{\textit{Conclusiones}}}}
+\section{Conclusiones}
 \newpage
 
-\section{{\color{azulnoche}\textbf{\textit{Referencias Bibliográficas}}}}
+\section{Referencias Bibliográficas}
 \nocite{*} % <--- ESTA LÍNEA OBLIGA A MOSTRAR TODO LO QUE HAYA EN EL .BIB
 \printbibliography[heading=none]
 \newpage
 
-\section{{\color{azulnoche}\textbf{\textit{Anexos}}}}
+\section{Anexos}
 
 \end{document}
