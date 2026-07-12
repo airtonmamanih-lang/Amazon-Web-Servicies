@@ -1,13 +1,13 @@
 import os
 import json
-from typing import List 
+from typing import List, Optional
 from pydantic import BaseModel
 from fastapi import FastAPI
 
-#Inicializacion de la aplicacion
+# Inicializacion de la aplicacion
 app = FastAPI()
 
-#molde de los datos de un juego
+# Molde de los datos de un juego
 class JuegoDTO(BaseModel):
     id: str
     titulo: str
@@ -35,33 +35,37 @@ def consultar_juegos():
         return {"error": "Error al decodificar el archivo JSON"}
 
 
-#Endpoint[ GET + /]
+# Endpoint [GET /filtrar]
 @app.get("/filtrar")
 def filtrar_juegos(
-    tipo: Optional[int]= None,
-    modo: Optional[str]= None,
-    plataforma: Optional[str]= None,
-    genero: Optional[str]= None,
-    clasificacion: Optional[str]= None,
-    anio_lanzamiento: Optional[int]= None,
-    calificacion: Optional[float]= None,
-    precio: Optional[float]= None):
-
-    #Almacenamos los datos de todos los juegos en un diccionario
+    titulo: Optional[str] = None,
+    tipo: Optional[str] = None,
+    modo: Optional[str] = None,
+    plataforma: Optional[str] = None,
+    genero: Optional[str] = None,
+    clasificacion: Optional[str] = None,
+    anio_lanzamiento: Optional[int] = None,
+    calificacion_min: Optional[float] = None,
+    precio_max: Optional[float] = None
+):
+    
+    # Almacenamos los datos de todos los juegos
     datos_juegos = consultar_juegos()
     
-    #Arreglo para almacenar las coincidencias en base a los filtros aplicados
+    # Si hay error al cargar el JSON, retornamos el error
+    if isinstance(datos_juegos, dict) and "error" in datos_juegos:
+        return datos_juegos
+    
+    # Arreglo para almacenar las coincidencias en base a los filtros aplicados
     coincidencias = []
 
-    #Itera sobre cada elemento del datos_juegos(diccionario)
+    # Itera sobre cada elemento del datos_juegos
     for diccionario_juego in datos_juegos:
         try:
-            #Desempaquetamos el diccionario en un objeto JuegoDTO
+            # Desempaquetamos el diccionario en un objeto JuegoDTO
             juego = JuegoDTO(**diccionario_juego)
-            
-            # Proceso de filtrado en base a los datos recibidos en la solicitud GET
+
             condiciones = [
-                not titulo or titulo == juego.titulo,
                 not tipo or tipo == juego.tipo,
                 not modo or modo == juego.modo,
                 not plataforma or plataforma in juego.plataforma,
@@ -71,12 +75,12 @@ def filtrar_juegos(
                 not calificacion_min or juego.calificacion >= calificacion_min,
                 not precio_max or juego.precio <= precio_max
             ]
-        
-            # Si todas las condiciones son verdaderas, agregamos el juego a la lista de coincidencias
+
+            # Si todas las condiciones son verdaderas, agregamos el juego a coincidencias
             if all(condiciones):
                 coincidencias.append(juego)
-            
+                
         except Exception as e:
-            print(f" Error al procesar: {e}")
-        
-return coincidencias
+            print(f"Error al procesar un registro: {e}")
+
+    return coincidencias
