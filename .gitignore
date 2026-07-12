@@ -6,8 +6,6 @@
 *.fls
 *.fdb_latexmk
 *.synctex.gz
-*.bcf
-*.run.xml
 
 # Archivos temporales adicionales
 *.lof
@@ -24,15 +22,3 @@
 # Sistema operativo
 .DS_Store
 Thumbs.db
-
-*.aux
-*.bbl
-*.bcf
-*.blg
-*.log
-*.out
-*.run.xml
-*.toc
-*.lof
-*.lot
-*.synctex.gz
