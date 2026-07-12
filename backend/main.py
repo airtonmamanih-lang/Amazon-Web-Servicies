@@ -6,13 +6,16 @@ from typing import List, Optional
 from pydantic import BaseModel
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from dotenv import load_dotenv
 
 # Inicializacion de la aplicacion
 app = FastAPI()
 
+load_dotenv()
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Abre la frontera para que tu Front local pueda consultar
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],  
     allow_headers=["*"],  
@@ -72,7 +75,7 @@ def filtrar_juegos(
     # Arreglo para almacenar las coincidencias en base a los filtros aplicados
     coincidencias = []
 
-    API_KEY_RAWG = "daa2bf37ba9b4ce89dc30fa246f4fb0f"
+    API_KEY_RAWG = os.getenv("API_KEY_RAWG")
 
     # Itera sobre cada elemento del datos_juegos
     for diccionario_juego in datos_juegos:
