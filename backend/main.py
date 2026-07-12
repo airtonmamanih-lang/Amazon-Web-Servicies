@@ -59,24 +59,24 @@ def filtrar_juegos(
         #Desempaquetamos el diccionario en un objeto JuegoDTO
         juego = JuegoDTO(**diccionario_juego)
         
-        # LISTA DE CONDICIONES (mucho más simple)
+        # Proceso de filtrado en base a los datos recibidos en la solicitud GET
         condiciones = [
-            not titulo or titulo == juego.titulo,              # Coincidencia exacta
-            not tipo or tipo == juego.tipo,                    # Coincidencia exacta
-            not modo or modo == juego.modo,                    # Coincidencia exacta
-            not plataforma or plataforma in juego.plataforma,  # Está en la lista
-            not genero or genero == juego.genero,              # Coincidencia exacta
-            not clasificacion or clasificacion == juego.clasificacion,  # Exacta
+            not titulo or titulo == juego.titulo,
+            not tipo or tipo == juego.tipo,
+            not modo or modo == juego.modo,
+            not plataforma or plataforma in juego.plataforma,
+            not genero or genero == juego.genero,
+            not clasificacion or clasificacion == juego.clasificacion,
             not anio_lanzamiento or anio_lanzamiento == juego.anio_lanzamiento,
             not calificacion_min or juego.calificacion >= calificacion_min,
             not precio_max or juego.precio <= precio_max
         ]
-        
-        # Todas las condiciones deben ser True
+    
+        # Si todas las condiciones son verdaderas, agregamos el juego a la lista de coincidencias
         if all(condiciones):
             coincidencias.append(juego)
-            
+        
     except Exception as e:
-        print(f"⚠️ Error al procesar: {e}")
+        print(f" Error al procesar: {e}")
         
 return coincidencias
