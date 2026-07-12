@@ -4,7 +4,6 @@ import BASE_URL from './config.js';
 document.getElementById('filter-form').addEventListener('submit', function(event) {
     event.preventDefault(); 
 
-    // 1. Mapeamos todas las opciones del HTML en un solo objeto clave:valor
     const filtros = {
         tipo: document.getElementById('tipo').value,
         modo: document.getElementById('modo').value,
@@ -59,7 +58,7 @@ function renderizarJuegos(juegos) {
         card.classList.add('juego-card');
 
         card.innerHTML = `
-            <img src="${juego.portada_url || 'https://via.placeholder.com/300x180'}" alt="${juego.titulo}">
+            <img src="${juego.portada_url || 'https://dummyimage.com/300x180'}" alt="${juego.titulo}">
             <div class="juego-card-content">
                 <h3>${juego.titulo}</h3>
                 <div class="tags">
