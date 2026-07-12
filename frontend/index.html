@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NextGen | Recomendación de Juegos</title>
     <!-- Fuentes e Iconos Premium -->
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght=500;600;700&family=Inter:wght=300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -87,36 +87,22 @@
                         </select>
                     </div>
 
-                    <!-- RANGO DE AÑOS -->
+                    <!-- AÑO (A partir de...) -->
                     <div class="form-group">
-                        <label for="anio"><i class="fa-solid fa-calendar-days"></i> Año</label>
-                        <select id="anio" name="anio">
-                            <option value="2024-2026">2024 - 2026 (Próximos / Recientes)</option>
-                            <option value="2020-2023">2020 - 2023 (Generación Actual)</option>
-                            <option value="2015-2019">2015 - 2019 (Retro Reciente)</option>
-                            <option value="2010-2014">2010 - 2014 (Clásicos HD)</option>
-                        </select>
+                        <label for="anio"><i class="fa-solid fa-calendar-days"></i> Desde el año</label>
+                        <input type="number" id="anio" name="anio" min="1980" max="2026" placeholder="Ej. 2020">
                     </div>
 
-                    <!-- CALIFICACIÓN MÍNIMA -->
+                    <!-- CALIFICACIÓN MÍNIMA (Permite decimales) -->
                     <div class="form-group">
                         <label for="calificacion_min"><i class="fa-solid fa-star"></i> Calif. mín</label>
-                        <select id="calificacion_min" name="calificacion_min">
-                            <option value="4.5">⭐⭐⭐⭐★ 4.5 (Obra Maestra)</option>
-                            <option value="4.0">⭐⭐⭐⭐☆ 4.0 (Muy Bueno)</option>
-                            <option value="3.5">⭐⭐⭐★☆ 3.5 (Bueno / Aceptable)</option>
-                            <option value="3.0">⭐⭐⭐☆☆ 3.0 (Regular)</option>
-                        </select>
+                        <input type="number" id="calificacion_min" name="calificacion_min" min="0" max="5" step="0.1" placeholder="0.0 - 5.0">
                     </div>
 
-                    <!-- RANGO DE PRECIO -->
+                    <!-- PRECIO MÁXIMO -->
                     <div class="form-group">
-                        <label for="precio"><i class="fa-solid fa-tags"></i> Precio</label>
-                        <select id="precio" name="precio">
-                            <option value="gratis">Free to Play (Gratis)</option>
-                            <option value="indie_price">Económico (Menos de $20)</option>
-                            <option value="premium_price">AAA / Premium (Precio Completo)</option>
-                        </select>
+                        <label for="precio_max"><i class="fa-solid fa-tags"></i> Precio máx ($)</label>
+                        <input type="number" id="precio_max" name="precio_max" min="0" step="0.01" placeholder="Ej. 29.99">
                     </div>
                 </div>
 

@@ -356,3 +356,47 @@ body::after {
     color: var(--bg-dark);
     box-shadow: 0 0 15px var(--cyber-cyan);
 }
+
+.form-group select,
+.form-group input[type="number"] {
+    width: 100%;
+    padding: 12px 16px;
+    background: rgba(15, 15, 25, 0.6); /* Fondo oscuro semitransparente */
+    border: 1px solid rgba(0, 242, 254, 0.2); /* Borde con sutil neón cian */
+    border-radius: 8px;
+    color: #ffffff; /* Texto blanco brillante */
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    outline: none;
+    backdrop-filter: blur(10px); /* Efecto Glassmorphism */
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* Efecto de enfoque (Focus) cuando el usuario va a escribir */
+.form-group input[type="number"]:focus,
+.form-group select:focus {
+    background: rgba(20, 20, 35, 0.8);
+    border-color: #00f2fe; /* El borde se ilumina en neón cian activo */
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.4); /* Resplandor neón */
+}
+
+/* Estilo para el texto de sugerencia (Placeholder) */
+.form-group input[type="number"]::placeholder {
+    color: rgba(255, 255, 255, 0.4); /* Blanco atenuado futurista */
+    font-weight: 300;
+}
+
+/* Ocultar las flechas nativas en navegadores basados en Webkit (Chrome, Safari, Edge) */
+.form-group input[type="number"]::-webkit-inner-spin-button,
+.form-group input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Ocultar las flechas y aplicar compatibilidad estándar (Firefox y otros) */
+.form-group input[type="number"] {
+    -moz-appearance: textfield; 
+    appearance: textfield; /* Corrección para la advertencia de VS Code */
+}
