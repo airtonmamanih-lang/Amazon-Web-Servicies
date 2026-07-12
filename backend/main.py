@@ -55,28 +55,28 @@ def filtrar_juegos(
 
     #Itera sobre cada elemento del datos_juegos(diccionario)
     for diccionario_juego in datos_juegos:
-    try:
-        #Desempaquetamos el diccionario en un objeto JuegoDTO
-        juego = JuegoDTO(**diccionario_juego)
+        try:
+            #Desempaquetamos el diccionario en un objeto JuegoDTO
+            juego = JuegoDTO(**diccionario_juego)
+            
+            # Proceso de filtrado en base a los datos recibidos en la solicitud GET
+            condiciones = [
+                not titulo or titulo == juego.titulo,
+                not tipo or tipo == juego.tipo,
+                not modo or modo == juego.modo,
+                not plataforma or plataforma in juego.plataforma,
+                not genero or genero == juego.genero,
+                not clasificacion or clasificacion == juego.clasificacion,
+                not anio_lanzamiento or anio_lanzamiento == juego.anio_lanzamiento,
+                not calificacion_min or juego.calificacion >= calificacion_min,
+                not precio_max or juego.precio <= precio_max
+            ]
         
-        # Proceso de filtrado en base a los datos recibidos en la solicitud GET
-        condiciones = [
-            not titulo or titulo == juego.titulo,
-            not tipo or tipo == juego.tipo,
-            not modo or modo == juego.modo,
-            not plataforma or plataforma in juego.plataforma,
-            not genero or genero == juego.genero,
-            not clasificacion or clasificacion == juego.clasificacion,
-            not anio_lanzamiento or anio_lanzamiento == juego.anio_lanzamiento,
-            not calificacion_min or juego.calificacion >= calificacion_min,
-            not precio_max or juego.precio <= precio_max
-        ]
-    
-        # Si todas las condiciones son verdaderas, agregamos el juego a la lista de coincidencias
-        if all(condiciones):
-            coincidencias.append(juego)
-        
-    except Exception as e:
-        print(f" Error al procesar: {e}")
+            # Si todas las condiciones son verdaderas, agregamos el juego a la lista de coincidencias
+            if all(condiciones):
+                coincidencias.append(juego)
+            
+        except Exception as e:
+            print(f" Error al procesar: {e}")
         
 return coincidencias
