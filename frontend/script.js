@@ -4,40 +4,27 @@ import BASE_URL from './config.js';
 document.getElementById('filter-form').addEventListener('submit', function(event) {
     event.preventDefault(); 
 
-    // 1. Capturar los valores del HTML
-    const tipo = document.getElementById('tipo').value;
-    const modo = document.getElementById('modo').value;
-    const plataforma = document.getElementById('plataforma').value;
-    const genero = document.getElementById('genero').value;
-    const clasificacion = document.getElementById('clasificacion').value;
+    // 1. Mapeamos todas las opciones del HTML en un solo objeto clave:valor
+    const filtros = {
+        tipo: document.getElementById('tipo').value,
+        modo: document.getElementById('modo').value,
+        plataforma: document.getElementById('plataforma').value,
+        genero: document.getElementById('genero').value,
+        clasificacion: document.getElementById('clasificacion').value,
+        anio_lanzamiento: document.getElementById('anio').value,
+        calificacion_min: document.getElementById('calificacion_min').value,
+        precio_max: document.getElementById('precio').value
+    };
 
-    const anioRaw = document.getElementById('anio').value;
-    const califRaw = document.getElementById('calificacion_min').value;
-    const precioRaw = document.getElementById('precio').value;
+    const parametrosLimpios = Object.entries(filtros)
+        .filter(([_, valor]) => valor !== "")
+        .map(([clave, valor]) => `${clave}=${encodeURIComponent(valor)}`)
+        .join('&');
 
-    // 2. CONSTRUCCIÓN INTELIGENTE DE LA URL (Evita enviar textos vacíos a campos numéricos)
-    // Empezamos con los parámetros de texto obligatorios
-    let queryParams = `tipo=${tipo}&modo=${modo}&plataforma=${plataforma}&genero=${genero}&clasificacion=${clasificacion}`;
+    const url = `${BASE_URL}/filtrar?${parametrosLimpios}`;
 
-    // Si el usuario escribió un año, lo agregamos con su nombre correcto para tu API
-    if (anioRaw !== "") {
-        queryParams += `&anio_lanzamiento=${parseInt(anioRaw)}`;
-    }
 
-    // Si el usuario escribió calificación, la agregamos como float
-    if (califRaw !== "") {
-        queryParams += `&calificacion_min=${parseFloat(califRaw)}`;
-    }
-
-    // Si el usuario escribió un precio máximo, lo agregamos como float
-    if (precioRaw !== "") {
-        queryParams += `&precio_max=${parseFloat(precioRaw)}`;
-    }
-
-    // Unimos la BASE_URL con la ruta /filtrar y nuestros parámetros limpios
-    const url = `${BASE_URL}/filtrar?${queryParams}`;
-
-    console.log("Enviando petición táctica limpia a:", url);
+    console.log("Enviando petición táctica a:", url);
 
     const container = document.getElementById('juegos-container');
     container.innerHTML = '<p class="placeholder-text"><i class="fa-solid fa-circle-notch fa-spin"></i> Inicializando escáner de base de datos...</p>';
