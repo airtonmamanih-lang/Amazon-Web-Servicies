@@ -4,3 +4,4 @@ venv/
 
 #ignorar cache de python
 .__pycache__/
+__pycache__/
