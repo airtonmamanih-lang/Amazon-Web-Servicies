@@ -24,3 +24,15 @@
 # Sistema operativo
 .DS_Store
 Thumbs.db
+
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.log
+*.out
+*.run.xml
+*.toc
+*.lof
+*.lot
+*.synctex.gz
