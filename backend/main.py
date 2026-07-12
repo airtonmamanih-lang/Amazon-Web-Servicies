@@ -9,7 +9,7 @@ app = FastAPI()
 
 # Molde de los datos de un juego
 class JuegoDTO(BaseModel):
-    id: str
+    id: int
     titulo: str
     tipo: str
     modo: str
