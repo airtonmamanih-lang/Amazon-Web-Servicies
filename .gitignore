@@ -6,6 +6,8 @@
 *.fls
 *.fdb_latexmk
 *.synctex.gz
+*.bcf
+*.run.xml
 
 # Archivos temporales adicionales
 *.lof
