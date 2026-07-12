@@ -1,0 +1,358 @@
+:root {
+    --bg-dark: #050508;          /* Fondo negro ultra profundo */
+    --card-bg: rgba(10, 10, 18, 0.85); /* Tarjetas oscuras ciberbéticas */
+    --cyber-purple: #bc00dd;     /* Morado neón reactivo */
+    --cyber-cyan: #00f0ff;       /* Cian eléctrico fosforescente */
+    --cyber-pink: #ff0055;       /* Rosa de advertencia */
+    --text-main: #ffffff;
+    --text-neon: #00f0ff;
+    --border-glow: rgba(0, 240, 255, 0.2);
+}
+
+body {
+    margin: 0;
+    font-family: 'Rajdhani', 'Inter', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Luces Neón de Fondo (Auroras gamer) */
+body::before {
+    content: '';
+    position: absolute;
+    top: -15%;
+    left: 20%;
+    width: 450px;
+    height: 450px;
+    background: var(--cyber-purple);
+    filter: blur(150px);
+    opacity: 0.25;
+    z-index: -1;
+    pointer-events: none;
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    bottom: 10%;
+    right: 15%;
+    width: 400px;
+    height: 400px;
+    background: var(--cyber-cyan);
+    filter: blur(150px);
+    opacity: 0.15;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+}
+
+/* Panel Premium con Borde de Neón Energizado */
+.filter-card-premium {
+    background: var(--card-bg);
+    border: 2px solid #1a1a2e;
+    border-radius: 12px;
+    padding: 32px;
+    margin-bottom: 40px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8), 
+                inset 0 0 15px rgba(188, 0, 221, 0.15);
+    position: relative;
+}
+
+/* Esquinas iluminadas futuristas */
+.filter-card-premium::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    width: 30px;
+    height: 30px;
+    border-top: 3px solid var(--cyber-cyan);
+    border-left: 3px solid var(--cyber-cyan);
+    border-top-left-radius: 12px;
+}
+
+.filter-card-premium::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+    width: 30px;
+    height: 30px;
+    border-bottom: 3px solid var(--cyber-purple);
+    border-right: 3px solid var(--cyber-purple);
+    border-bottom-right-radius: 12px;
+}
+
+/* Título Gamer con Glow */
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 32px;
+}
+
+.header-icon {
+    font-size: 2rem;
+    color: var(--cyber-cyan);
+    filter: drop-shadow(0 0 10px var(--cyber-cyan));
+}
+
+.card-header h2 {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 2rem;
+    letter-spacing: 3px;
+    margin: 0;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Estructura de Filtros */
+.grid-filters {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-group label {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Iconos de los labels en morado eléctrico */
+.form-group label i {
+    color: var(--cyber-purple);
+    filter: drop-shadow(0 0 5px var(--cyber-purple));
+    font-size: 1rem;
+}
+
+/* Selectores Estilo HUD Futurista */
+.form-group select {
+    background-color: #0d0d14;
+    color: #e2e8f0;
+    border: 1px solid #2d2d44;
+    padding: 14px 16px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.25s ease;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2300f0ff'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 16px;
+}
+
+.form-group select:hover {
+    border-color: var(--cyber-purple);
+    box-shadow: 0 0 10px rgba(18c, 0, 2dd, 0.2);
+    background-color: #12121f;
+}
+
+.form-group select:focus {
+    border-color: var(--cyber-cyan);
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+    color: #fff;
+}
+
+/* Botón con Hiper-Glow Reactivo */
+.btn-buscar-neon {
+    width: 100%;
+    background: linear-gradient(90deg, var(--cyber-purple) 0%, #7000ff 50%, var(--cyber-cyan) 100%);
+    background-size: 200% auto;
+    color: white;
+    border: none;
+    padding: 18px;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px rgba(188, 0, 221, 0.5);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.btn-buscar-neon:hover {
+    background-position: right center;
+    box-shadow: 0 0 35px var(--cyber-cyan);
+    transform: scale(1.01);
+}
+
+/* Pantalla de carga / Placeholders */
+.placeholder-text {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: #4b5563;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border: 1px dashed #2d2d44;
+    padding: 40px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.placeholder-text i {
+    color: var(--cyber-cyan);
+    margin-right: 8px;
+}
+
+/* Tarjetas de Resultados Estilo Computador de Nave */
+.juegos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 28px;
+}
+
+.juego-card {
+    background: #09090f;
+    border: 1px solid #1f1f33;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.juego-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--cyber-cyan);
+    box-shadow: 0 10px 25px rgba(0, 240, 255, 0.25);
+}
+
+.juego-card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border-bottom: 2px solid #1f1f33;
+    filter: grayscale(10%);
+    transition: filter 0.3s, transform 0.3s;
+}
+
+.juego-card:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.02);
+}
+
+.juego-card-content {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.juego-card h3 {
+    margin: 0 0 14px 0;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+.tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+}
+
+.tag {
+    background: rgba(0, 240, 255, 0.05);
+    border: 1px solid rgba(0, 240, 255, 0.2);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--cyber-cyan);
+    letter-spacing: 0.5px;
+}
+
+.juego-card p {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    margin: 0 0 20px 0;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+/* Footer de la tarjeta */
+.juego-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #1f1f33;
+    padding-top: 18px;
+}
+
+.calificacion {
+    color: #ffb703;
+    font-weight: 700;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    text-shadow: 0 0 8px rgba(255, 183, 3, 0.4);
+}
+
+.precio {
+    background: rgba(188, 0, 221, 0.1);
+    border: 1px solid var(--cyber-purple);
+    color: #f472b6;
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+/* Botón Adquirir Estilo Sci-Fi */
+.btn-link {
+    text-decoration: none;
+    color: #fff;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    background: transparent;
+    border: 1px solid var(--cyber-cyan);
+    padding: 6px 14px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    box-shadow: inset 0 0 4px rgba(0, 240, 255, 0.2);
+}
+
+.btn-link:hover {
+    background: var(--cyber-cyan);
+    color: var(--bg-dark);
+    box-shadow: 0 0 15px var(--cyber-cyan);
+}
