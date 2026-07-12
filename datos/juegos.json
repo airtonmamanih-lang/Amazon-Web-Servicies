@@ -1,6 +1,6 @@
 [
   {
-    "id": "juego-001",
+    "id": 1,
     "titulo": "Elden Ring",
     "tipo": "Acción",
     "modo": "Single-player, Multiplayer",
@@ -12,7 +12,7 @@
     "precio": 59.99
   },
   {
-    "id": "juego-002",
+    "id": 2,
     "titulo": "The Legend of Zelda: Tears of the Kingdom",
     "tipo": "Aventura",
     "modo": "Single-player",
@@ -24,7 +24,7 @@
     "precio": 69.99
   },
   {
-    "id": "juego-003",
+    "id": 3,
     "titulo": "Baldur's Gate 3",
     "tipo": "RPG",
     "modo": "Single-player, Multiplayer",
@@ -36,7 +36,7 @@
     "precio": 59.99
   },
   {
-    "id": "juego-004",
+    "id": 4,
     "titulo": "Call of Duty: Modern Warfare III",
     "tipo": "Tirador",
     "modo": "Single-player, Multiplayer",
@@ -48,7 +48,7 @@
     "precio": 69.99
   },
   {
-    "id": "juego-005",
+    "id": 5,
     "titulo": "Starfield",
     "tipo": "RPG",
     "modo": "Single-player",
@@ -60,7 +60,7 @@
     "precio": 69.99
   },
   {
-    "id": "juego-006",
+    "id": 6,
     "titulo": "Super Mario Bros. Wonder",
     "tipo": "Plataforma",
     "modo": "Single-player, Multiplayer Local",
@@ -72,7 +72,7 @@
     "precio": 59.99
   },
   {
-    "id": "juego-007",
+    "id": 7,
     "titulo": "Cyberpunk 2077: Phantom Liberty",
     "tipo": "Acción",
     "modo": "Single-player",
@@ -84,7 +84,7 @@
     "precio": 59.99
   },
   {
-    "id": "juego-008",
+    "id": 8,
     "titulo": "Final Fantasy XVI",
     "tipo": "RPG",
     "modo": "Single-player",
@@ -96,7 +96,7 @@
     "precio": 69.99
   },
   {
-    "id": "juego-009",
+    "id": 9,
     "titulo": "Fortnite",
     "tipo": "Tirador",
     "modo": "Multiplayer",
@@ -108,7 +108,7 @@
     "precio": 0.0
   },
   {
-    "id": "juego-010",
+    "id": 10,
     "titulo": "Helldivers 2",
     "tipo": "Tirador",
     "modo": "Multiplayer Co-op",
@@ -120,7 +120,7 @@
     "precio": 39.99
   },
   {
-    "id": "juego-011",
+    "id": 11,
     "titulo": "Alan Wake 2",
     "tipo": "Horror",
     "modo": "Single-player",
@@ -132,7 +132,7 @@
     "precio": 59.99
   },
   {
-    "id": "juego-012",
+    "id": 12,
     "titulo": "Palworld",
     "tipo": "Aventura",
     "modo": "Single-player, Multiplayer Co-op",
@@ -144,7 +144,7 @@
     "precio": 29.99
   },
   {
-    "id": "juego-013",
+    "id": 13,
     "titulo": "Hollow Knight: Silksong",
     "tipo": "Plataforma",
     "modo": "Single-player",
@@ -156,7 +156,7 @@
     "precio": 14.99
   },
   {
-    "id": "juego-014",
+    "id": 14,
     "titulo": "Tekken 8",
     "tipo": "Lucha",
     "modo": "Single-player, Multiplayer",
@@ -168,7 +168,7 @@
     "precio": 59.99
   },
   {
-    "id": "juego-015",
+    "id": 15,
     "titulo": "Dragon's Dogma 2",
     "tipo": "Acción",
     "modo": "Single-player",
@@ -180,7 +180,7 @@
     "precio": 69.99
   },
   {
-    "id": "juego-016",
+    "id": 16,
     "titulo": "Minecraft",
     "tipo": "Sandbox",
     "modo": "Single-player, Multiplayer",
@@ -238,9 +238,7 @@
     "anio_lanzamiento": 2024,
     "calificacion": 3.95,
     "precio": 69.99
-  }
-]
-
+  },
   {
     "id": "juego-002",
     "titulo": "The Legend of Zelda: Tears of the Kingdom",

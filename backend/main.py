@@ -38,7 +38,7 @@ def consultar_juegos():
 #Endpoint[ GET + /]
 @app.get("/filtrar")
 def filtrar_juegos(
-    tipo: Optional[str]= None,
+    tipo: Optional[int]= None,
     modo: Optional[str]= None,
     plataforma: Optional[str]= None,
     genero: Optional[str]= None,
@@ -47,11 +47,36 @@ def filtrar_juegos(
     calificacion: Optional[float]= None,
     precio: Optional[float]= None):
 
-    #Almacenamos los datos de todos los juegos en una variable
+    #Almacenamos los datos de todos los juegos en un diccionario
     datos_juegos = consultar_juegos()
     
-    #Variable para almacenar las coincidencias en base a los filtros aplicados
+    #Arreglo para almacenar las coincidencias en base a los filtros aplicados
     coincidencias = []
 
-    if all(coincidencias):
-        coincidencias.append(juego)
+    #Itera sobre cada elemento del datos_juegos(diccionario)
+    for diccionario_juego in datos_juegos:
+    try:
+        #Desempaquetamos el diccionario en un objeto JuegoDTO
+        juego = JuegoDTO(**diccionario_juego)
+        
+        # LISTA DE CONDICIONES (mucho más simple)
+        condiciones = [
+            not titulo or titulo == juego.titulo,              # Coincidencia exacta
+            not tipo or tipo == juego.tipo,                    # Coincidencia exacta
+            not modo or modo == juego.modo,                    # Coincidencia exacta
+            not plataforma or plataforma in juego.plataforma,  # Está en la lista
+            not genero or genero == juego.genero,              # Coincidencia exacta
+            not clasificacion or clasificacion == juego.clasificacion,  # Exacta
+            not anio_lanzamiento or anio_lanzamiento == juego.anio_lanzamiento,
+            not calificacion_min or juego.calificacion >= calificacion_min,
+            not precio_max or juego.precio <= precio_max
+        ]
+        
+        # Todas las condiciones deben ser True
+        if all(condiciones):
+            coincidencias.append(juego)
+            
+    except Exception as e:
+        print(f"⚠️ Error al procesar: {e}")
+        
+return coincidencias
