@@ -3,9 +3,18 @@ import json
 from typing import List, Optional
 from pydantic import BaseModel
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
 # Inicializacion de la aplicacion
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Abre la frontera para que tu Front local pueda consultar
+    allow_credentials=True,
+    allow_methods=["*"],  
+    allow_headers=["*"],  
+)
 
 # Molde de los datos de un juego
 class JuegoDTO(BaseModel):
