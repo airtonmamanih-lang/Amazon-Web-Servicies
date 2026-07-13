@@ -17,7 +17,7 @@
         "precio": 39.99,
         "descripcion": "Enfrenta el destino en un vasto mundo abierto de fantasía oscura como el legendario cazador de monstruos Geralt de Rivia.",
         "url_juego": "https://www.thewitcher.com",
-        "portada_url": null
+        "portada_url": "https://media.rawg.io/media/games/618/618c2031a07bbff6b4f611f10b6bcdbc.jpg"
     },
     {
         "id": 2,
@@ -1290,7 +1290,7 @@
         "precio": 69.99,
         "descripcion": "Qué significa ser un héroe? Descúbrelo en esta renovada y humorística visión del legendario mundo de Albión.",
         "url_juego": "https://www.xbox.com",
-        "portada_url": null
+        "portada_url": "https://media.rawg.io/media/games/705/7052ebf19b7b57ada5eeb21dea59f0e7.jpg"
     },
     {
         "id": 70,
@@ -1933,7 +1933,7 @@
         "precio": 0.0,
         "descripcion": "Un RPG de acción hardcore ambientado en el oscuro continente de Wraeclast, famoso por su inmenso árbol de habilidades.",
         "url_juego": "https://www.pathofexile.com",
-        "portada_url": null
+        "portada_url": "https://media.rawg.io/media/games/d0f/d0f91fe1d92332147e5db74e207cfc7a.jpg"
     },
     {
         "id": 104,
