@@ -126,17 +126,126 @@ style=apa
 % ==============================
 
 \section{Introducción}
+La evolución de la computación en la nube ha reconfigurado la gestión tecnológica y los sistemas de información a nivel global. Al permitir el acceso a recursos informáticos a través de Internet de manera flexible y bajo demanda, este modelo cambió el enfoque tradicional de adquirir costosos servidores físicos (CapEx) por un esquema de pago por uso basado en gastos operativos (OpEx) \parencite{mell2011}. Actualmente, este entramado digital sostiene operaciones críticas que van desde la banca transaccional y las plataformas de entretenimiento, hasta la administración gubernamental y el desarrollo de la inteligencia artificial. En este escenario, Amazon Web Services (AWS) destaca como el actor más influyente. Desde su aparición en 2006, la compañía no solo fue pionera en comercializar estos servicios, sino que se consolidó como el líder de la industria, concentrando cerca de un tercio del mercado global de infraestructura pública \parencite{gartner2024, statista2025}.
+
+Sin embargo, la escala alcanzada por AWS plantea debates que van más allá del ámbito puramente técnico o empresarial. Al estar una porción tan masiva del Internet moderno centralizada en una sola corporación privada, surgen dudas razonables sobre la seguridad sistémica de la red mundial, el peligro del monopolio tecnológico y las barreras reales para la libre competencia \parencite{armbrust2010}. Por esta razón, esta monografía examina el ecosistema de AWS desde una perspectiva técnica pero también analítica y crítica, evaluando las implicaciones de su dominio en la sociedad contemporánea.
+
+Para cumplir con este propósito, la investigación ofrece un análisis integral que conecta diferentes dimensiones de la plataforma. En primer lugar, se abordan los antecedentes históricos de Amazon y los conceptos teóricos fundamentales que definen los modelos de servicio (IaaS, PaaS, SaaS) y de despliegue en la nube. Posteriormente, se detalla la ingeniería física de sus centros de datos, explicando cómo funcionan las Regiones y Zonas de Disponibilidad para garantizar la tolerancia a fallos, junto con el papel de innovaciones en virtualización como el Sistema Nitro. Asimismo, se exploran los desarrollos más recientes de AWS en la frontera tecnológica, incluyendo el diseño de chips propios y herramientas orientadas a la Inteligencia Artificial Generativa. Finalmente, el trabajo analiza las principales controversias del ecosistema, como los costos ocultos, el riesgo de dependencia del proveedor (\textit{vendor lock-in}), el impacto de sus caídas globales y las propuestas de regulación antimonopolio por parte de los gobiernos. De este modo, este estudio busca brindar a los estudiantes de Introducción a la Computación una base sólida para entender el rol estructural que AWS juega en el mundo contemporáneo.
 \newpage
 
-\section{Capítulo I}
-\subsection{Contexto histórico}
 
+\section{Capítulo I: El Paradigma de la Computación en la Nube}
+
+El presente capítulo constituye el soporte teórico y conceptual de esta investigación. Su propósito fundamental es contextualizar al lector en la génesis, transformación y consolidación del modelo de computación en la nube como el motor de la infraestructura digital del siglo XXI. Para ello, se examina en primer lugar el trayecto evolutivo de Amazon.com, Inc., analizando los factores operativos e internos que impulsaron su metamorfosis de comercio minorista a líder tecnológico global con el nacimiento de AWS. Posteriormente, se abordan las bases normativas e internacionales del paradigma \textit{cloud} según los estándares del NIST, para finalmente catalogar de forma analítica los diversos modelos de despliegue y de servicio que articulan el desarrollo de software contemporáneo. Con este recorrido, se establecen los cimientos conceptuales necesarios para el desglose técnico y crítico de las secciones posteriores.
+
+\subsection{Contexto Histórico }
+
+Para comprender el origen de la computación en la nube moderna, es necesario analizar la transformación estructural de Amazon.com, Inc. Fundada en 1994 por Jeffrey Bezos como una librería en línea, la compañía experimentó una expansión masiva y acelerada durante su primera década de existence. Hacia el año 2000, la plataforma de comercio electrónico de Amazon se había convertido en un ecosistema altamente complejo, pero su infraestructura tecnológica subyacente adolecía de un diseño monolítico que limitaba severamente su escalabilidad operativa \parencite{varia2014}. 
+
+Los equipos de ingeniería de la empresa invertían un porcentaje desproporcionado de su tiempo en tareas de aprovisionamiento de hardware, configuración de bases de datos y diseño de redes personalizadas para cada nuevo proyecto o función que se deseaba lanzar al mercado. La infraestructura física de la compañía operaba en silos aislados, lo que provocaba que los recursos computacionales se duplicaran de forma ineficiente y que los ciclos de desarrollo de software se extendieran durante semanas o meses. 
+
+Ante esta problemática, la dirección técnica de Amazon, bajo la guía de figuras clave como el actual director ejecutivo Andy Jassy y el director de tecnología (CTO) Werner Vogels, inició una reestructuración radical de sus sistemas. Alrededor del año 2002, se emitió un mandato corporativo interno que obligaba a todos los equipos de desarrollo a desacoplar sus aplicaciones y a exponer sus datos y funcionalidades exclusivamente a través de Interfaces de Programación de Aplicaciones (APIs) estrictamente estandarizadas e independientes del hardware subyacente.
+
+Esta transformación hacia una Arquitectura Orientada a Servicios (SOA) interna permitió que las capacidades de cómputo, red y almacenamiento de Amazon se abstrajeran y unificaran. El equipo directivo descubrió que, al construir esta plataforma común y estandarizada para resolver sus propios problemas de optimización y crecimiento minorista, habían diseñado un conjunto de servicios de infraestructura altamente eficientes que poseían un valor comercial intrínseco masivo si se ofrecían a desarrolladores y empresas externas \parencite{awsWhatIs}.
 \subsection{El nacimiento de AWS}
+La formalización de esta infraestructura como un modelo de negocio independiente dio origen a Amazon Web Services (AWS), cuya plataforma fue presentada oficialmente al mercado global en marzo de 2006. El hito fundacional de la computación en la nube moderna se consolidó con el lanzamiento de su primer servicio comercial enfocado en el almacenamiento de objetos: \textit{Amazon Simple Storage Service} (S3). En agosto del mismo año, AWS expandió su catálogo con la introducción de \textit{Amazon Elastic Compute Cloud} (EC2), un servicio que permitía a los usuarios alquilar capacidad de procesamiento virtualizada por horas o minutos \parencite{awsWhatIs}.
 
+El impacto de este lanzamiento fue disruptivo en el ámbito de las ciencias de la computación y la administración de tecnologías de la información. Por primera vez en la historia de la informática, las organizaciones de cualquier tamaño podían omitir la adquisición física de servidores y conmutadores de red, sustituyéndolos por llamadas programáticas a APIs remotas conectadas a internet \parencite{armbrust2010}.
+
+A lo largo de las dos décadas siguientes, la cronología evolutiva de AWS se caracterizó por una diversificación constante de sus servicios e innovaciones de arquitectura, los cuales se sintetizan cronológicamente en el siguiente recurso técnico:
+
+\vspace{0.3cm}
+\begin{table}[H]
+\centering
+\caption{Cronología Evolutiva de Amazon Web Services (2006–2026)}
+\label{tab:cronologia_aws}
+\begin{tabular}{ l p{5cm} p{6.5cm} }
+\toprule
+\textbf{Año} & \textbf{Hito Tecnológico / Servicio} & \textbf{Impacto en el Paradigma del Cloud} \\
+\midrule
+\textbf{2006} & Lanzamiento de Amazon S3 y EC2. & Fundación de la nube pública comercial moderna. \\
+\textbf{2009} & Introducción de Amazon VPC. & Permitió el aislamiento lógico y la adopción empresarial. \\
+\textbf{2012} & Lanzamiento de Amazon DynamoDB. & Democratización de bases de datos NoSQL de baja latencia. \\
+\textbf{2014} & Presentación de AWS Lambda. & Inauguración oficial de la computación sin servidores (\textit{Serverless}). \\
+\textbf{2017} & Lanzamiento de Amazon SageMaker. & Masificación del entrenamiento y despliegue de \textit{Machine Learning}. \\
+\textbf{2023--2026} & Despliegue de Amazon Bedrock. & Consolidación de la infraestructura para IA Generativa a escala global. \\
+\bottomrule
+\end{tabular}
+\end{table}
+\vspace{0.3cm}
 \subsection{Conceptos fundamentales del Cloud Computing}
+Para dotar a esta investigación de rigor académico, el análisis de la computación en la nube debe fundamentarse en el marco teórico establecido por el Instituto Nacional de Estándares y Tecnología (NIST) de los Estados Unidos. En su publicación especial 800-145, \textcite{mell2011} conceptualizan formalmente el \textit{Cloud Computing} como un modelo tecnológico que facilita el acceso ubiquo, adaptativo y bajo demanda a un conjunto compartido de recursos de computación configurables (redes, servidores, almacenamiento, aplicaciones y servicios) que pueden ser aprovisionados y liberados de manera inmediata con un mínimo esfuerzo de gestión por parte del usuario.
 
-\subsection{Modelos de despliegue de la nube}
-\newpage
+\vspace{0.2cm}
+\begin{quote}
+\small
+\textit{\enquote{La computación en la nube es un modelo que permite el acceso ubicuo, conveniente y bajo demanda a un fondo compartido de recursos informáticos configurables (por ejemplo, redes, servidores, almacenamiento, aplicaciones y servicios) que pueden aprovisionarse y liberarse rápidamente con un mínimo esfuerzo de gestión o interacción con el proveedor del servicio.}} \parencite[p.~2]{mell2011}.
+\end{quote}
+\vspace{0.2cm}
+
+De acuerdo con este estándar internacional, el modelo de computación en la nube se sostiene de forma obligatoria sobre cinco características esenciales, las cuales se estructuran conceptualmente a continuación:
+
+\vspace{0.3cm}
+\begin{table}[H]
+\centering
+\caption{Matriz de Características Esenciales del Cloud Computing (NIST)}
+\label{tab:nist_caracteristicas}
+\begin{tabular}{ p{4.5cm} p{8cm} }
+\toprule
+\textbf{Característica NIST} & \textbf{Principio Operativo Clave} \\
+\midrule
+Autoservicio bajo demanda & Aprovisionamiento automatizado sin intervención humana del proveedor. \\
+Acceso amplio a la red & Disponibilidad multiplataforma (móvil, web, servidores) vía HTTP/HTTPS. \\
+Asignación común de recursos & Infraestructura física compartida dinámicamente (\textit{Multi-tenancy}). \\
+Elasticidad rápida & Escalabilidad horizontal y vertical automática según la demanda de tráfico. \\
+Servicio medido & Facturación transparente basada en el consumo real (\textit{Pay-as-you-go}). \\
+\bottomrule
+\end{tabular}
+\end{table}
+\vspace{0.3cm}
+\subsection{Modelos de Despliegue de la Nube: Pública, Privada e Híbrida}
+
+La implementación estratégica de la computación en la nube varía significativamente en función de la propiedad, la exclusividad del hardware y la ubicación geográfica de los centros de datos físicos. El NIST clasifica estas configuraciones en tres modelos de despliegue principales: Nube Pública, Nube Privada y Nube Híbrida \parencite{mell2011}. Para fines analíticos, sus diferencias estructurales se examinan bajo criterios de propiedad, modelo financiero y casos de uso en la Tabla \ref{tab:modelos_despliegue}.
+
+\vspace{0.3cm}
+\begin{table}[H]
+\centering
+\caption{Diferencias Estructurales entre los Modelos de Despliegue}
+\label{tab:modelos_despliegue}
+\begin{tabular}{ p{2.8cm} p{3.4cm} p{3.4cm} p{3.4cm} }
+\toprule
+\textbf{Criterio} & \textbf{Nube Pública} & \textbf{Nube Privada} & \textbf{Nube Híbrida} \\
+\midrule
+\textbf{Propiedad} & Proveedor (AWS). & Una sola organización. & Entorno mixto interconectado. \\
+\textbf{Esquema} & Costos operativos (OpEx). & Inversión de capital (CapEx). & Mixto (Local + elástico). \\
+\textbf{Multitenancia} & Compartido lógicamente. & Aislado físicamente. & Mixto según sensibilidad. \\
+\textbf{Caso de Uso} & \textit{Startups}, apps web, IA. & Sector defensa, banca, salud. & Corporaciones en transición. \\
+\bottomrule
+\end{tabular}
+\end{table}
+\vspace{0.3cm}
+
+\subsection{Modelos de Servicio: Infraestructura (IaaS), Plataforma (PaaS) y Software (SaaS)}
+
+La abstracción de componentes en la computación en la nube divide el catálogo técnico en tres categorías conceptuales o modelos de servicio primarios. Estos modelos delimitan con precisión el nivel de control y la división de responsabilidades operativas entre el proveedor de nube y el cliente final \parencite{subashini2011}. Como cierre analítico del capítulo, la Tabla \ref{tab:modelos_servicio} contrasta la matriz de responsabilidades e incluye los ejemplos de aplicación directa en el catálogo de AWS.
+
+\vspace{0.3cm}
+\begin{table}[H]
+\centering
+\caption{Tabla Comparativa de los Modelos de Servicio en la Nube}
+\label{tab:modelos_servicio}
+\begin{tabular}{ p{3.2cm} p{3.4cm} p{3.4cm} p{3.4cm} }
+\toprule
+\textbf{Criterio} & \textbf{IaaS (Infraestructura)} & \textbf{PaaS (Plataforma)} & \textbf{SaaS (Software)} \\
+\midrule
+\textbf{Abstracción} & Bajo (Control de hardware virtual). & Medio (Entornos de ejecución). & Alto (Aplicación lista para el usuario). \\
+\textbf{Cliente} & S.O., datos, \textit{firewalls} y código. & Datos y código de la aplicación. & Ninguna (Solo gestiona usuarios). \\
+\textbf{AWS} & Servidores, red e hipervisor. & Parches S.O. y base de datos. & Toda la pila de software e interfaces. \\
+\textbf{Ejemplo AWS} & Amazon EC2, Amazon EBS \parencite{varia2014}. & AWS Elastic Beanstalk, RDS. & Amazon WorkSpaces, AWS Wickr. \\
+\bottomrule
+\end{tabular}
+\end{table}
+\vspace{0.3cm}
 
 \section{Capítulo II}
 La infraestructura de Amazon Web Services (AWS) constituye uno de los ecosistemas de computación en la nube más grandes del mundo. Su arquitectura está diseñada para proporcionar alta disponibilidad, escalabilidad, seguridad y tolerancia a fallos mediante una red global de centros de datos distribuidos estratégicamente. En este capítulo se describen los principales componentes de la infraestructura de AWS, la ingeniería de sus centros de datos, la tecnología de virtualización utilizada, los principales servicios que ofrece y el modelo de responsabilidad compartida en materia de seguridad.
