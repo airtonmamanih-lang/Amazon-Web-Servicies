@@ -135,11 +135,11 @@ Para lograr esto, la monografía analiza diferentes aspectos de la plataforma. P
 
 \section{Capítulo I: El Paradigma de la Computación en la Nube}
 
-El presente capítulo constituye el soporte teórico y conceptual de esta investigación. Su propósito fundamental es contextualizar al lector en la génesis, transformación y consolidación del modelo de computación en la nube como el motor de la infraestructura digital del siglo XXI. Para ello, se examina en primer lugar el trayecto evolutivo de Amazon.com, Inc., analizando los factores operativos e internos que impulsaron su metamorfosis de comercio minorista a líder tecnológico global con el nacimiento de AWS. Posteriormente, se abordan las bases normativas e internacionales del paradigma \textit{cloud} según los estándares del NIST, para finalmente catalogar de forma analítica los diversos modelos de despliegue y de servicio que articulan el desarrollo de software contemporáneo. Con este recorrido, se establecen los cimientos conceptuales necesarios para el desglose técnico y crítico de las secciones posteriores.
+Este capítulo sirve como base teórica del trabajo. El objetivo es entender cómo nació, cambió y se consolidó el modelo de computación en la nube como el motor de la infraestructura digital del siglo XXI. Para ello, se examina en primer lugar el trayecto evolutivo de Amazon.com, Inc., analizando los factores operativos e internos que impulsaron su metamorfosis de comercio minorista a líder tecnológico global con el nacimiento de AWS. Posteriormente, se abordan las bases normativas e internacionales del paradigma \textit{cloud} según los estándares del NIST, para finalmente catalogar de forma analítica los diversos modelos de despliegue y de servicio que articulan el desarrollo de software contemporáneo. Con este recorrido, se establecen los cimientos conceptuales necesarios para el desglose técnico y crítico de las secciones posteriores.
 
-\subsection{Contexto Histórico }
+\subsection{Contexto Histórico: }
 
-Para comprender el origen de la computación en la nube moderna, es necesario analizar la transformación estructural de Amazon.com, Inc. Fundada en 1994 por Jeffrey Bezos como una librería en línea, la compañía experimentó una expansión masiva y acelerada durante su primera década de existence. Hacia el año 2000, la plataforma de comercio electrónico de Amazon se había convertido en un ecosistema altamente complejo, pero su infraestructura tecnológica subyacente adolecía de un diseño monolítico que limitaba severamente su escalabilidad operativa \parencite{varia2014}. 
+Para comprender el origen de la computación en la nube moderna, es necesario analizar la transformación estructural de Amazon.com, Inc. Fundada en 1994 por Jeffrey Bezos como una librería en línea, la compañía experimentó una expansión masiva y acelerada durante su primera década de existence. Hacia el año 2000, la plataforma de comercio electrónico de Amazon se había convertido en un ecosistema altamente complejo, .pero su infraestructura tecnológica tenía un diseño monolítico que le impedía crecer y escalar de forma eficiente \parencite{varia2014}. 
 
 Los equipos de ingeniería de la empresa invertían un porcentaje desproporcionado de su tiempo en tareas de aprovisionamiento de hardware, configuración de bases de datos y diseño de redes personalizadas para cada nuevo proyecto o función que se deseaba lanzar al mercado. La infraestructura física de la compañía operaba en silos aislados, lo que provocaba que los recursos computacionales se duplicaran de forma ineficiente y que los ciclos de desarrollo de software se extendieran durante semanas o meses. 
 
@@ -151,7 +151,7 @@ La formalización de esta infraestructura como un modelo de negocio independient
 
 El impacto de este lanzamiento fue disruptivo en el ámbito de las ciencias de la computación y la administración de tecnologías de la información. Por primera vez en la historia de la informática, las organizaciones de cualquier tamaño podían omitir la adquisición física de servidores y conmutadores de red, sustituyéndolos por llamadas programáticas a APIs remotas conectadas a internet \parencite{armbrust2010}.
 
-A lo largo de las dos décadas siguientes, la cronología evolutiva de AWS se caracterizó por una diversificación constante de sus servicios e innovaciones de arquitectura, los cuales se sintetizan cronológicamente en el siguiente recurso técnico:
+A lo largo de las dos décadas siguientes, la cronología evolutiva de AWS se caracterizó por una diversificación constante de sus servicios e innovaciones de arquitectura, los cuales se resumen en la siguiente línea de tiempo:
 
 \vspace{0.3cm}
 \begin{table}[H]
@@ -173,7 +173,7 @@ A lo largo de las dos décadas siguientes, la cronología evolutiva de AWS se ca
 \end{table}
 \vspace{0.3cm}
 \subsection{Conceptos fundamentales del Cloud Computing}
-Para dotar a esta investigación de rigor académico, el análisis de la computación en la nube debe fundamentarse en el marco teórico establecido por el Instituto Nacional de Estándares y Tecnología (NIST) de los Estados Unidos. En su publicación especial 800-145, \textcite{mell2011} conceptualizan formalmente el \textit{Cloud Computing} como un modelo tecnológico que facilita el acceso ubiquo, adaptativo y bajo demanda a un conjunto compartido de recursos de computación configurables (redes, servidores, almacenamiento, aplicaciones y servicios) que pueden ser aprovisionados y liberados de manera inmediata con un mínimo esfuerzo de gestión por parte del usuario.
+Para darle a esta investigación un tono más académico, el análisis de la computación en la nube debe fundamentarse en el marco teórico establecido por el Instituto Nacional de Estándares y Tecnología (NIST) de los Estados Unidos. En su informe especial 800-145, \textcite{mell2011} definen formalmente el \textit{Cloud Computing} como un modelo tecnológico que facilita el acceso ubiquo, adaptativo y bajo demanda a un conjunto compartido de recursos de computación configurables (redes, servidores, almacenamiento, aplicaciones y servicios) que pueden ser aprovisionados y liberados de manera inmediata con un mínimo esfuerzo de gestión por parte del usuario.
 
 \vspace{0.2cm}
 \begin{quote}
@@ -182,7 +182,7 @@ Para dotar a esta investigación de rigor académico, el análisis de la computa
 \end{quote}
 \vspace{0.2cm}
 
-De acuerdo con este estándar internacional, el modelo de computación en la nube se sostiene de forma obligatoria sobre cinco características esenciales, las cuales se estructuran conceptualmente a continuación:
+De acuerdo con este estándar internacional, el modelo de computación en la nube se sostiene de forma obligatoria sobre cinco características esenciales detalladas en la siguiente tabla:
 
 \vspace{0.3cm}
 \begin{table}[H]
@@ -226,7 +226,7 @@ La implementación estratégica de la computación en la nube varía significati
 
 \subsection{Modelos de Servicio: Infraestructura (IaaS), Plataforma (PaaS) y Software (SaaS)}
 
-La abstracción de componentes en la computación en la nube divide el catálogo técnico en tres categorías conceptuales o modelos de servicio primarios. Estos modelos delimitan con precisión el nivel de control y la división de responsabilidades operativas entre el proveedor de nube y el cliente final \parencite{subashini2011}. Como cierre analítico del capítulo, la Tabla \ref{tab:modelos_servicio} contrasta la matriz de responsabilidades e incluye los ejemplos de aplicación directa en el catálogo de AWS.
+La abstracción de componentes en la computación en la nube divide el catálogo técnico en tres categorías conceptuales o modelos de servicio primarios. Estos modelos delimitan con precisión el nivel de control y la división de responsabilidades operativas entre el proveedor de nube y el cliente final \parencite{subashini2011}. Por último para cerrar el capítulo, la Tabla \ref{tab:modelos_servicio} contrasta la matriz de responsabilidades e incluye los ejemplos de aplicación directa en el catálogo de AWS.
 
 \vspace{0.3cm}
 \begin{table}[H]
