@@ -22,3 +22,21 @@
 # Sistema operativo
 .DS_Store
 Thumbs.db
+
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.synctex(busy)
+*.toc
+*.lof
+*.lot
+*.nav
+*.snm
+*.vrb
