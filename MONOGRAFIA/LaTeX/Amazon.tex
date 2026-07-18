@@ -249,7 +249,7 @@ La abstracción de componentes en la computación en la nube divide el catálogo
 \section{Capítulo II}
 La infraestructura de Amazon Web Services (AWS) constituye uno de los ecosistemas de computación en la nube más grandes del mundo. Su arquitectura está diseñada para proporcionar alta disponibilidad, escalabilidad, seguridad y tolerancia a fallos mediante una red global de centros de datos distribuidos estratégicamente. En este capítulo se describen los principales componentes de la infraestructura de AWS, la ingeniería de sus centros de datos, la tecnología de virtualización utilizada, los principales servicios que ofrece y el modelo de responsabilidad compartida en materia de seguridad.
 
-\subsection{Topología de la Infraestructura Mundial}
+\subsection{Topología de la Infraestructura Mundial: Regiones y AZs}
 
 La infraestructura mundial de Amazon Web Services (AWS) está conformada por una red global de centros de datos distribuidos estratégicamente en distintos continentes. Esta infraestructura permite que las aplicaciones y servicios operen con baja latencia, alta disponibilidad y redundancia, garantizando la continuidad del servicio incluso ante fallas de hardware o desastres naturales\parencite{awsInfrastructure}.
 
@@ -284,7 +284,7 @@ Backbone Global & Red privada de fibra óptica de AWS. & Comunicación segura en
 \end{tabularx}
 \end{table}
 
-\subsection{Ingeniería de los Centros de Datos}
+\subsection{Ingeniería de los Centros de Datos: Redundancia y Climatización}
 
 Los centros de datos de AWS están diseñados siguiendo estrictos estándares internacionales de seguridad, disponibilidad y eficiencia energética\parencite{awsDatacenters}. Cada instalación incorpora sistemas redundantes de energía eléctrica, refrigeración, conectividad y almacenamiento para minimizar el riesgo de interrupciones del servicio.
 
@@ -321,7 +321,7 @@ Escalabilidad & Posibilidad de ampliar recursos sin interrupciones.\\
 \end{tabularx}
 \end{table}
 
-\subsection{Virtualización Avanzada}
+\subsection{Virtualización Avanzada: Sistema AWS nitro}
 
 La virtualización constituye una de las tecnologías fundamentales sobre las que se basa Amazon Web Services\parencite{awsNitro}. Esta técnica permite ejecutar múltiples máquinas virtuales sobre un mismo servidor físico, optimizando el uso de los recursos computacionales y reduciendo los costos operativos.
 
@@ -351,7 +351,7 @@ Virtualización de escritorios & Escritorios virtuales administrados. & Amazon W
 
 Amazon Web Services ofrece más de doscientos servicios en la nube. Entre ellos destacan tres pilares fundamentales para el funcionamiento de cualquier infraestructura tecnológica: cómputo, almacenamiento y bases de datos.
 
-\subsubsection{Cómputo}
+\subsubsection{Cómputo (Amazon EC2, AWS Lambda)}
 
 Los servicios de cómputo proporcionan capacidad de procesamiento para ejecutar aplicaciones, sitios web, servicios empresariales y algoritmos de inteligencia artificial. AWS permite aprovisionar recursos bajo demanda y pagar únicamente por el tiempo utilizado\parencite{amazonEC2}.
 
@@ -386,7 +386,7 @@ Amazon Lightsail & Infraestructura simplificada para pequeñas aplicaciones.\\
 \end{tabularx}
 \end{table}
 
-\subsubsection{Almacenamiento}
+\subsubsection{Almacenamiento (Amazon S3, EBS, Glacier)}
 
 Los servicios de almacenamiento permiten guardar información de manera segura, escalable y altamente disponible. AWS ofrece diferentes alternativas según las necesidades de cada aplicación, incluyendo almacenamiento por objetos, bloques y sistemas de archivos compartidos\parencite{amazonS3}.
 
@@ -417,7 +417,7 @@ Amazon FSx & Archivos & Sistemas Windows y Lustre.\\
 \end{tabularx}
 \end{table}
 
-\subsubsection{Bases de Datos}
+\subsubsection{Bases de Datos (RDS, DynamoDB, Aurora)}
 
 AWS proporciona servicios administrados para bases de datos relacionales y NoSQL, permitiendo almacenar grandes volúmenes de información con alta disponibilidad y escalabilidad. La administración automática reduce la carga operativa de los administradores de bases de datos\parencite{amazonRDS}.
 
@@ -477,31 +477,6 @@ Disponibilidad global & Cifrado de la información\\
 \bottomrule
 \end{tabularx}
 \end{table}
-
-\begin{table}[H]
-\centering
-\caption{Resumen del Capítulo II}
-\begin{tabularx}{\textwidth}{lXX}
-\toprule
-\textbf{Sección} & \textbf{Tema principal} & \textbf{Servicios relacionados}\\
-\midrule
-3.1 & Infraestructura mundial & Regiones, AZ, Edge Locations\\
-
-3.2 & Centros de datos & Seguridad física y redundancia\\
-
-3.3 & Virtualización & EC2, Nitro, VPC\\
-
-3.4.1 & Cómputo & EC2, Lambda, ECS, EKS\\
-
-3.4.2 & Almacenamiento & S3, EBS, EFS\\
-
-3.4.3 & Bases de datos & RDS, Aurora, DynamoDB\\
-
-3.5 & Seguridad & IAM, cifrado y responsabilidad compartida\\
-\bottomrule
-\end{tabularx}
-\end{table}
-
 \newpage
 
 \section{Capítulo III}
