@@ -36,7 +36,7 @@ class JuegoDTO(BaseModel):
     url_juego: str
 
 # Calculamos la ruta subiendo un nivel y entrando a la carpeta 'datos'
-RUTA_JSON = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "datos", "juegos_hidratados.json"))
+RUTA_JSON = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "datos", "juegos_con_portada.json"))
 
 # Consulta de todos los juegos a juegos.json
 def consultar_juegos():

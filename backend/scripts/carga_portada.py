@@ -9,7 +9,7 @@ load_dotenv()
 
 # Rutas de archivos
 RUTA_ORIGINAL = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "datos", "juegos.json"))
-RUTA_DESTINO = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "datos", "juegos_hidratados.json"))
+RUTA_DESTINO = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "datos", "juegos_con_portada.json"))
 
 def hidratar_base_datos():
     # 1. Leer los juegos que no tienen portada
@@ -55,9 +55,6 @@ def hidratar_base_datos():
             juego["portada_url"] = None
 
         juegos_procesados.append(juego)
-        
-        # TRUCO DE INGENIERÍA: Rate Limiting
-        # Dejar descansar la API 0.5 segundos entre juegos para evitar bloqueos por IP (HTTP 429 Too Many Requests)
         time.sleep(0.5)
 
     # 3. Guardar el nuevo JSON con los datos listos de forma permanente
