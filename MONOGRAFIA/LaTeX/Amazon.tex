@@ -489,17 +489,183 @@ Disponibilidad global & Cifrado de la información\\
 \newpage
 
 \section{Capítulo IV}
+En los capítulos anteriores se analizó el origen de Amazon Web Services (AWS), su evolución tecnológica y el papel que desempeña como uno de los principales proveedores de infraestructura en la nube. Sin embargo, el liderazgo alcanzado por la compañía también ha generado una serie de cuestionamientos relacionados con la concentración del mercado, la dependencia tecnológica, la seguridad operativa y las políticas regulatorias que actualmente comienzan a desarrollarse en distintos países.
+
+El presente capítulo aborda estos aspectos desde una perspectiva crítica. Para ello, se examina la posición dominante de AWS dentro del mercado mundial de servicios en la nube, los riesgos asociados al uso de infraestructuras altamente centralizadas, las consecuencias arquitectónicas y financieras derivadas del denominado \textit{vendor lock-in}, el impacto que han tenido algunas interrupciones masivas de servicio y las principales iniciativas regulatorias impulsadas por distintos organismos internacionales.
+
+
 \subsection{Análisis de Cuota de Mercado Global y Concentración del Poder Tecnológico}
+La cuota de mercado constituye uno de los principales indicadores utilizados para medir el grado de participación que posee una empresa dentro de un determinado sector económico. En el caso de la computación en la nube, este indicador refleja el porcentaje de ingresos generados por cada proveedor respecto al total del mercado mundial de servicios de infraestructura (\textit{Infrastructure as a Service}, IaaS) y plataforma (\textit{Platform as a Service}, PaaS).
+
+Amazon Web Services logró consolidar esta posición gracias a su ventaja de haber sido el primer proveedor en ofrecer servicios comerciales de nube pública desde el año 2006. Este hecho le permitió construir una infraestructura global antes que sus competidores y desarrollar economías de escala que todavía representan una importante barrera de entrada para nuevas empresas.
+
+De acuerdo con el informe publicado por Synergy Research Group, durante el último trimestre analizado el mercado mundial de infraestructura en la nube superó los 119 mil millones de dólares en ingresos trimestrales y alcanzó más de 419 mil millones de dólares acumulados durante el año. Dentro de este escenario, AWS continúa ocupando el primer lugar con una participación aproximada del 28\% del mercado mundial, seguido por Microsoft Azure con un 21\% y Google Cloud Platform con un 14\%. El porcentaje restante corresponde a otros proveedores como Oracle Cloud, IBM Cloud, Alibaba Cloud y diversas empresas especializadas.\parencite{synergy2026}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{Distribucion.png}
+\caption{Distribución de la cuota de mercado mundial de los principales proveedores de servicios en la nube. Adaptado de Synergy Research Group.}
+\label{fig:cuota_mercado}
+\end{figure}
+
+Más allá de representar una ventaja comercial, esta distribución evidencia un elevado nivel de concentración tecnológica. Actualmente, los tres principales proveedores de nube pública controlan aproximadamente el 68\% del mercado global, configurando una estructura cercana a un oligopolio tecnológico.\parencite{synergy2026}
+
+Esta concentración se explica principalmente por dos factores. El primero corresponde al fenómeno conocido como \textit{data gravity}, según el cual las organizaciones tienden a mantener sus aplicaciones y bases de datos dentro del mismo proveedor debido al elevado costo económico y operativo que implica trasladar grandes volúmenes de información hacia otra plataforma. El segundo factor está relacionado con el crecimiento acelerado de la Inteligencia Artificial Generativa (GenAI), cuya infraestructura requiere inversiones multimillonarias en centros de datos, aceleradores gráficos (GPU) y redes de alta velocidad, recursos que actualmente solo pueden ser financiados por un reducido grupo de compañías tecnológicas.\parencite{synergy2026}
+
+Como consecuencia, gran parte de la infraestructura digital utilizada por empresas, instituciones públicas y organizaciones privadas depende actualmente de un número muy limitado de proveedores. Esta situación incrementa el poder de negociación de estas compañías y reduce las posibilidades de migrar hacia plataformas alternativas sin asumir importantes costos económicos y técnicos.\parencite{cma2025}
+
 
 \subsection{Riesgos Arquitectónicos y Financieros}
+El crecimiento de la computación en la nube ha permitido que organizaciones de todos los tamaños reduzcan costos de infraestructura y aumenten la disponibilidad de sus servicios. Sin embargo, este modelo también ha dado lugar a nuevos desafíos relacionados con la dependencia tecnológica y la administración financiera de los recursos en la nube. Entre ellos destacan el fenómeno conocido como \textit{vendor lock-in} y la creciente complejidad de los modelos de facturación utilizados por los grandes proveedores.\parencite{cma2025}
+
+El término \textit{vendor lock-in} hace referencia a la situación en la que una organización desarrolla una dependencia significativa hacia un único proveedor de servicios, dificultando la migración hacia otras plataformas sin asumir elevados costos económicos o técnicos. En el caso de AWS, este fenómeno surge debido a la utilización de numerosos servicios propietarios que, aunque ofrecen un alto nivel de integración y rendimiento, reducen considerablemente la portabilidad de las aplicaciones.\parencite{cma2025}
+
+Servicios como Amazon DynamoDB, AWS Lambda, Amazon Cognito o Amazon S3 poseen interfaces de programación (API) diseñadas específicamente para el ecosistema de AWS. Como consecuencia, cuando una empresa desarrolla sus aplicaciones utilizando estas tecnologías, trasladarlas posteriormente a plataformas como Microsoft Azure o Google Cloud implica modificar parte importante del software, realizar nuevas pruebas e incluso rediseñar componentes completos de la arquitectura.\parencite{cma2025}
+
+Otro aspecto ampliamente discutido corresponde a las denominadas tarifas de salida de datos (\textit{egress fees}). Mientras que AWS permite transferir información hacia sus propios centros de datos sin costo adicional, la extracción de grandes volúmenes de datos hacia infraestructuras externas suele generar cargos económicos importantes. Según el informe publicado por la Competition and Markets Authority (CMA), estas tarifas constituyen una de las principales barreras para la adopción de estrategias de nube híbrida o multi-nube, ya que incrementan significativamente el costo de migración entre proveedores.\parencite{cma2025}
+
+A esta situación se suma la complejidad del modelo de facturación implementado por los proveedores de nube pública. El esquema de pago por uso (\textit{pay-as-you-go}) ofrece flexibilidad para contratar únicamente los recursos consumidos; sin embargo, las facturas suelen incluir cientos o miles de registros asociados al procesamiento, almacenamiento, transferencia de datos, solicitudes realizadas y otros servicios especializados. Esta característica dificulta el control del gasto, especialmente en organizaciones con una gran cantidad de aplicaciones desplegadas.
+
+Como respuesta a esta problemática ha surgido la disciplina conocida como \textit{FinOps}, cuyo objetivo consiste en optimizar el uso de los recursos en la nube mediante el análisis permanente de los costos, la planificación presupuestaria y la identificación de servicios infrautilizados o innecesarios. Actualmente, numerosas empresas incorporan equipos especializados en FinOps para mejorar la eficiencia financiera de sus infraestructuras tecnológicas.
+
+La Tabla \ref{tab:barreras_aws} resume los principales riesgos arquitectónicos y financieros identificados por la Competition and Markets Authority (CMA) durante su investigación sobre el mercado de servicios en la nube.
+
+\begin{table}[H]
+\centering
+\caption{Barreras arquitectónicas y financieras identificadas en AWS. Adaptado de CMA (2025).}
+\label{tab:barreras_aws}
+
+\begin{tabular}{p{3.2cm}p{3.8cm}p{4.6cm}p{3.8cm}}
+\toprule
+\textbf{Dimensión} &
+\textbf{Mecanismo en AWS} &
+\textbf{Consecuencia} &
+\textbf{Mitigación} \\
+\midrule
+
+Bloqueo de datos &
+Tarifas elevadas por transferencia de datos hacia otros proveedores. &
+Incremento del costo de migración y dependencia financiera. &
+Negociación de contratos y estrategias de nube híbrida. \\
+
+Bloqueo de software &
+Uso de APIs y servicios propietarios como Lambda, DynamoDB y Cognito. &
+Disminución de la portabilidad y necesidad de reescribir aplicaciones. &
+Uso de contenedores y plataformas compatibles con múltiples nubes. \\
+
+Opacidad de costos &
+Facturación basada en múltiples métricas de consumo. &
+Dificultad para controlar el gasto y aparición de recursos infrautilizados. &
+Implementación de prácticas de FinOps y monitoreo permanente. \\
+
+\bottomrule
+\end{tabular}
+
+\end{table}
+
 
 \subsection{Fragilidad Sistémica}
+El crecimiento sostenido de Amazon Web Services ha permitido que millones de aplicaciones, empresas e instituciones públicas utilicen una infraestructura altamente disponible y distribuida. Sin embargo, esta misma concentración tecnológica ha dado origen a un fenómeno conocido como \textit{fragilidad sistémica}, el cual hace referencia al riesgo de que una falla localizada pueda afectar simultáneamente a un gran número de servicios críticos alrededor del mundo.\parencite{aws_network_2021}
+
+Aunque AWS opera una infraestructura distribuida mediante regiones y Zonas de Disponibilidad (\textit{Availability Zones}), algunos servicios esenciales continúan dependiendo de componentes centrales que coordinan la operación del ecosistema completo. Entre ellos destaca la región \textit{us-east-1} (Norte de Virginia), considerada históricamente como una de las regiones más importantes de AWS debido a la gran cantidad de servicios globales que alberga. Como consecuencia, una interrupción en esta región puede producir efectos que trascienden su ubicación física y afectar aplicaciones desplegadas en distintos continentes.\parencite{aws_network_2021}
+
+Este comportamiento ha sido descrito como un efecto dominó, donde una falla inicial desencadena múltiples interrupciones en servicios relacionados. La elevada interdependencia entre componentes internos incrementa la complejidad del sistema y dificulta la recuperación inmediata cuando ocurre un incidente de gran magnitud.
+
+Los informes técnicos publicados por Amazon después de cada interrupción importante permiten comprender mejor este fenómeno. Entre los casos más representativos destacan los siguientes:
+
+\begin{itemize}
+
+\item \textbf{Interrupción de Amazon S3 (2017).} Durante una operación rutinaria de mantenimiento en la región \textit{us-east-1}, un error humano provocó la desconexión accidental de servidores encargados de administrar el servicio Amazon S3. Como consecuencia, miles de páginas web y aplicaciones dejaron de funcionar debido a que gran parte de sus archivos estáticos se encontraban almacenados en dicho servicio.\parencite{aws_s3_2017}
+
+\item \textbf{Evento de Amazon Kinesis (2020).} Una modificación realizada sobre la capacidad de procesamiento del servicio Kinesis generó una sobrecarga en la red interna de AWS. La interrupción afectó otros servicios dependientes como CloudWatch y Cognito, ocasionando problemas en plataformas de educación, dispositivos inteligentes y diversas aplicaciones empresariales.\parencite{aws_kinesis_2020}
+
+\item \textbf{Falla de conectividad en AWS (2021).} Un problema de congestión dentro de la red privada de AWS impidió la comunicación entre distintos servicios internos. Incluso las herramientas utilizadas por los propios ingenieros para supervisar la infraestructura resultaron afectadas, prolongando considerablemente el tiempo necesario para restaurar el servicio.\parencite{aws_network_2021}
+
+\end{itemize}
+
+La Figura \ref{fig:efecto_cascada} representa de forma simplificada cómo una falla localizada dentro de la infraestructura puede propagarse progresivamente hacia múltiples servicios hasta afectar a millones de usuarios finales.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.85\textwidth]{diagrama.png}
+\caption{Propagación del efecto dominó ante una interrupción en la infraestructura de AWS. Elaboración propia basada en AWS Post-Event Summaries.}
+\label{fig:efecto_cascada}
+\end{figure}
+
+Estos acontecimientos demuestran que una alta disponibilidad contractual no elimina completamente la posibilidad de interrupciones masivas. Aunque AWS ofrece acuerdos de nivel de servicio (SLA) con porcentajes de disponibilidad muy elevados, la creciente dependencia mundial hacia un reducido número de proveedores incrementa el impacto potencial de cualquier incidente operativo. Por esta razón, numerosas organizaciones adoptan actualmente estrategias de redundancia, recuperación ante desastres y arquitecturas multi-nube con el objetivo de reducir los riesgos asociados a una dependencia excesiva de un único proveedor.\parencite{aws_network_2021}
+
 
 \subsection{Debate Monopólico}
+El crecimiento acelerado de la computación en la nube ha permitido optimizar el uso de los recursos tecnológicos y reducir la necesidad de que cada organización mantenga su propia infraestructura física. No obstante, el funcionamiento de centros de datos de gran escala también implica un elevado consumo de energía y recursos naturales. Debido a ello, el impacto ambiental de Amazon Web Services (AWS) se ha convertido en uno de los principales temas de discusión dentro de la industria tecnológica y en la comunidad científica.\parencite{climate_pledge_2019}
+
+Los centros de datos de AWS operan de manera ininterrumpida para garantizar la disponibilidad de millones de aplicaciones alrededor del mundo. Esta operación requiere enormes cantidades de electricidad para alimentar servidores, dispositivos de almacenamiento, equipos de comunicación y sistemas de refrigeración. Como resultado, el consumo energético de la infraestructura cloud aumenta constantemente a medida que crece la demanda de servicios digitales, especialmente aquellos relacionados con la Inteligencia Artificial Generativa y el procesamiento masivo de datos.\parencite{climate_pledge_2019}
+
+Con el objetivo de reducir este impacto, Amazon impulsa diversas iniciativas enfocadas en la sostenibilidad. Entre ellas destaca su participación en \textit{The Climate Pledge}, compromiso mediante el cual la empresa busca alcanzar emisiones netas de carbono iguales a cero antes del año 2040. Asimismo, AWS ha incrementado significativamente sus inversiones en proyectos de energía eólica y solar, convirtiéndose en uno de los mayores compradores corporativos de energía renovable a nivel mundial.\parencite{climate_pledge_2019}
+
+Otra estrategia importante consiste en el desarrollo de hardware propio. Los procesadores AWS Graviton, diseñados por la propia compañía, ofrecen una mejor relación entre rendimiento y consumo energético en comparación con arquitecturas tradicionales. Esta optimización permite ejecutar una mayor cantidad de cargas de trabajo utilizando menos electricidad, mejorando la eficiencia global de los centros de datos.
+
+Sin embargo, diversos investigadores señalan que la mejora en la eficiencia energética no elimina completamente el impacto ambiental. El aumento constante de usuarios y servicios hace que el consumo total continúe creciendo, fenómeno conocido como la Paradoja de Jevons, según la cual una tecnología más eficiente puede terminar incrementando el consumo total del recurso debido a su mayor utilización.\parencite{alcott2005jevons}
+
+Además del consumo eléctrico, existen otros desafíos ambientales asociados a la infraestructura cloud. Uno de ellos corresponde al elevado uso de agua en los sistemas de refrigeración de algunos centros de datos, especialmente en regiones con escasez hídrica. Otro problema importante es la generación de residuos electrónicos, originados por la renovación periódica de servidores, discos de almacenamiento y otros componentes de hardware utilizados en la operación de la nube.
+
+La Tabla \ref{tab:impacto_ambiental} resume los principales impactos ambientales asociados a AWS, las estrategias implementadas por la compañía y los desafíos que aún permanecen para la industria.
+
+\begin{table}[H]
+\centering
+\renewcommand{\arraystretch}{1.5}
+\caption{Impacto ambiental de AWS y principales desafíos de sostenibilidad}
+\label{tab:impacto_ambiental}
+\begin{tabular}{>{\centering\arraybackslash}p{3cm} p{5cm} p{4.5cm} p{3.5cm}}
+\toprule
+\textbf{Vector de Impacto} &
+\textbf{Descripción del Riesgo} &
+\textbf{Estrategia de Mitigación (AWS)} &
+\textbf{Desafío Pendiente} \\
+\midrule
+
+\textbf{Consumo Energético} &
+Elevada demanda de electricidad para servidores y sistemas de refrigeración. &
+Uso creciente de energías renovables y procesadores Graviton de alta eficiencia. &
+La mayor eficiencia también incrementa la demanda total de infraestructura (Paradoja de Jevons). \\
+
+\textbf{Consumo de Agua} &
+Uso intensivo de agua para refrigeración de centros de datos. &
+Programas de gestión hídrica y proyectos Water Positive. &
+Disponibilidad limitada de agua en regiones afectadas por sequías. \\
+
+\textbf{Residuos Electrónicos} &
+Renovación periódica de servidores y dispositivos tecnológicos. &
+Reutilización de equipos y programas de reciclaje de componentes. &
+Incremento continuo del volumen de residuos electrónicos a nivel mundial. \\
+
+\bottomrule
+\end{tabular}
+\end{table}
+
+En conjunto, estas iniciativas demuestran el compromiso de AWS por reducir el impacto ambiental de sus operaciones. Sin embargo, el crecimiento constante de la computación en la nube plantea nuevos desafíos relacionados con el consumo de recursos naturales y la sostenibilidad a largo plazo. En consecuencia, la eficiencia tecnológica deberá complementarse con políticas ambientales y modelos de operación que permitan equilibrar el desarrollo digital con la protección del medio ambiente.\parencite{climate_pledge_2019,alcott2005jevons}
+
 
 \subsection{Perspectivas Regulatorias}
-\newpage
+El crecimiento de Amazon Web Services (AWS) y de los principales proveedores de computación en la nube ha despertado un creciente interés por parte de los organismos reguladores de distintos países. A medida que una parte importante de la infraestructura digital mundial depende de un número reducido de empresas, los gobiernos han comenzado a analizar si las actuales condiciones del mercado favorecen realmente la competencia o, por el contrario, generan barreras que dificultan la entrada de nuevos participantes.\parencite{cma2025,eu_data_act_2023,eu_dma_2022}
 
+Las principales preocupaciones regulatorias se centran en aspectos como la dependencia tecnológica de un único proveedor (\textit{vendor lock-in}), las tarifas de salida de datos (\textit{egress fees}), la falta de interoperabilidad entre plataformas y la creciente concentración del mercado en manos de AWS, Microsoft Azure y Google Cloud. Estas condiciones podrían limitar la capacidad de las organizaciones para migrar libremente entre proveedores y reducir la competencia dentro del sector.\parencite{cma2025}
+
+Ante este escenario, diversas autoridades internacionales han iniciado investigaciones y desarrollado nuevas propuestas regulatorias para garantizar un mercado más competitivo y transparente. Entre las iniciativas más importantes destacan las siguientes:
+
+\begin{itemize}
+
+\item \textbf{Competition and Markets Authority (Reino Unido).} La CMA realizó una investigación sobre el mercado de servicios en la nube, concluyendo que existen prácticas comerciales que dificultan el cambio de proveedor, especialmente debido a las tarifas de salida de datos y a los descuentos condicionados por contratos de largo plazo. Como resultado, recomendó establecer medidas que promuevan una mayor competencia entre los proveedores de infraestructura cloud.\parencite{cma2025}
+
+\item \textbf{Federal Trade Commission (Estados Unidos).} La FTC inició investigaciones relacionadas con las inversiones y alianzas estratégicas entre los principales proveedores de infraestructura cloud y las empresas dedicadas al desarrollo de Inteligencia Artificial Generativa. El objetivo es determinar si estas asociaciones podrían fortalecer aún más el poder de mercado de unas pocas compañías tecnológicas.\parencite{ftc_ai_2024}
+
+\item \textbf{Unión Europea.} La Unión Europea ha impulsado diversas normas orientadas a facilitar la portabilidad de datos, mejorar la interoperabilidad entre plataformas y reducir las barreras para cambiar de proveedor. Entre las más relevantes se encuentran la \textit{Data Act} y la \textit{Digital Markets Act (DMA)}, las cuales buscan fortalecer la competencia y otorgar un mayor control de los datos a empresas y usuarios.\parencite{eu_data_act_2023,eu_dma_2022}
+
+\end{itemize}
+
+En paralelo, diferentes iniciativas internacionales promueven el desarrollo de arquitecturas abiertas y estrategias multi-nube, permitiendo que las organizaciones distribuyan sus servicios entre varios proveedores para reducir riesgos de dependencia y aumentar la resiliencia de sus sistemas.
+
+En consecuencia, el futuro de la computación en la nube no dependerá únicamente de la innovación tecnológica, sino también del equilibrio entre competitividad, regulación y protección de los usuarios. Las políticas que actualmente se encuentran en desarrollo buscan garantizar que la infraestructura digital continúe creciendo bajo principios de transparencia, interoperabilidad y libre competencia, favoreciendo tanto a las empresas como a los consumidores finales.\parencite{cma2025,eu_data_act_2023,eu_dma_2022}
+\newpage
 \section{Conclusiones}
 \newpage
 
