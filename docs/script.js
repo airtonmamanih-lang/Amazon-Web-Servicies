@@ -14,11 +14,9 @@ const campos = formulario.querySelectorAll("select, input");
 // ACTIVAR / DESACTIVAR BOTÓN
 // ==========================================
 function actualizarEstadoBoton() {
-
-    const formularioCompleto = [...campos].every(campo => {
-        return campo.value.trim() !== "";
-    });
-
+    const genero = document.getElementById('genero').value;
+    // Solo requiere que el género esté seleccionado
+    const formularioCompleto = genero !== "";
     botonBuscar.disabled = !formularioCompleto;
 }
 
