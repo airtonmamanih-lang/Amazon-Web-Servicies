@@ -7,28 +7,22 @@ import BASE_URL from './config.js';
 const formulario = document.getElementById("filter-form");
 const botonBuscar = document.getElementById("btnBuscar");
 
-// Todos los selects e inputs del formulario
-const campos = formulario.querySelectorAll("select, input");
+// Referencia específica al campo de género
+const campoGenero = document.getElementById("genero");
 
 // ==========================================
-// ACTIVAR / DESACTIVAR BOTÓN (CORREGIDO)
+// ACTIVAR / DESACTIVAR BOTÓN (MODIFICADO)
 // ==========================================
 function actualizarEstadoBoton() {
-
-    const formularioCompleto = [...campos].every(campo => {
-        return campo.value.trim() !== "";
-    });
-
-    botonBuscar.disabled = !formularioCompleto;
+    // El botón se deshabilita si el valor del género está vacío ("")
+    botonBuscar.disabled = (campoGenero.value.trim() === "");
 }
 
-// Escuchar cambios en todos los campos
-campos.forEach(campo => {
-    campo.addEventListener("input", actualizarEstadoBoton);
-    campo.addEventListener("change", actualizarEstadoBoton);
-});
+// Escuchar cambios únicamente en el campo de género para el estado del botón
+campoGenero.addEventListener("input", actualizarEstadoBoton);
+campoGenero.addEventListener("change", actualizarEstadoBoton);
 
-// Estado inicial
+// Estado inicial (arrancará bloqueado porque inicia en "")
 actualizarEstadoBoton();
 
 
@@ -72,32 +66,20 @@ formulario.addEventListener('submit', function(event) {
         '<p class="placeholder-text"><i class="fa-solid fa-circle-notch fa-spin"></i> Inicializando escáner de base de datos...</p>';
 
     fetch(url)
-
         .then(response => {
-
             if (!response.ok) {
                 throw new Error('Error en la respuesta del servidor');
             }
-
             return response.json();
-
         })
-
         .then(juegos => {
-
             renderizarJuegos(juegos);
-
         })
-
         .catch(error => {
-
             console.error('Error detectado:', error);
-
             container.innerHTML =
                 '<p class="placeholder-text" style="color: #ef4444; border-color: rgba(239,68,68,0.3);"><i class="fa-solid fa-triangle-exclamation"></i> Error al conectar con el servidor de recomendaciones.</p>';
-
         });
-
 });
 
 
@@ -107,21 +89,16 @@ formulario.addEventListener('submit', function(event) {
 function renderizarJuegos(juegos) {
 
     const container = document.getElementById('juegos-container');
-
     container.innerHTML = '';
 
     if (juegos.length === 0) {
-
         container.innerHTML =
             '<p class="placeholder-text"><i class="fa-solid fa-radar"></i> No se encontraron juegos que coincidan con esos filtros tácticos.</p>';
-
         return;
     }
 
     juegos.forEach(juego => {
-
         const card = document.createElement('div');
-
         card.classList.add('juego-card');
 
         card.innerHTML = `
@@ -164,11 +141,8 @@ function renderizarJuegos(juegos) {
                     <a href="${juego.url_juego || '#'}"
                        target="_blank"
                        class="btn-link">
-
                         ADQUIRIR
-                        <i class="fa-solid fa-arrow-up-right-from-square"
-                           style="font-size:0.75rem"></i>
-
+                        <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.75rem"></i>
                     </a>
 
                 </div>
@@ -177,7 +151,5 @@ function renderizarJuegos(juegos) {
         `;
 
         container.appendChild(card);
-
     });
-
 }
