@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test API</title>
+</head>
+<body>
+    <h1>Test</h1>
+    <button onclick="test()">Probar</button>
+    <pre id="resultado"></pre>
+
+    <script>
+        async function test() {
+            const url = 'http://localhost:8000/filtrar?genero=fps';
+            const response = await fetch(url);
+            const data = await response.json();
+            document.getElementById('resultado').textContent = JSON.stringify(data, null, 2);
+        }
+    </script>
+</body>
+</html>

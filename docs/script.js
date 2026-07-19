@@ -14,21 +14,13 @@ const campos = formulario.querySelectorAll("select, input");
 // ACTIVAR / DESACTIVAR BOTÓN (CORREGIDO)
 // ==========================================
 function actualizarEstadoBoton() {
-    // Apuntamos específicamente al selector de género usando su ID
-    const selectGenero = document.getElementById("genero");
-    
-    // El botón se bloquea SI el género está vacío. Si tiene un valor, se desbloquea.
-    botonBuscar.disabled = (selectGenero.value.trim() === "");
+
+    const formularioCompleto = [...campos].every(campo => {
+        return campo.value.trim() !== "";
+    });
+
+    botonBuscar.disabled = !formularioCompleto;
 }
-
-// Escuchar cambios en todos los campos (mantenemos esto por si acaso cambian el género)
-campos.forEach(campo => {
-    campo.addEventListener("input", actualizarEstadoBoton);
-    campo.addEventListener("change", actualizarEstadoBoton);
-});
-
-// Estado inicial al cargar la página
-actualizarEstadoBoton();
 
 // Escuchar cambios en todos los campos
 campos.forEach(campo => {
