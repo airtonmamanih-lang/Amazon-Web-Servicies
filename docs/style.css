@@ -93,26 +93,48 @@ body::after {
     border-bottom-right-radius: 12px;
 }
 
-/* Título Gamer con Glow */
+/* Configuramos el contenedor principal para centrar horizontal y verticalmente */
 .card-header {
-    display: flex;
-    align-items: center;
-    gap: 14px;
+    display: block;             /* Cambiamos a block para usar alineación tradicional */
+    text-align: center;         /* <--- Esto centra el título h2 automáticamente en el medio */
+    position: relative;         /* Permite posicionar las imágenes a los lados */
     margin-bottom: 32px;
+    min-height: 60px;           /* Altura mínima para que no se encima con los filtros */
 }
 
-.header-icon {
-    font-size: 2rem;
-    color: var(--cyber-cyan);
-    filter: drop-shadow(0 0 10px var(--cyber-cyan));
+/* Imagen de la Derecha (Gatito) */
+.header-right-img {
+    position: absolute;
+    right: 0;                   /* Pegada al extremo derecho del menú */
+    top: 50%;
+    transform: translateY(-50%);/* Centrado vertical perfecto */
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 8px var(--cyber-cyan));
 }
 
+/* Imagen de la Izquierda */
+.header-left-img {
+    position: absolute;
+    left: 0;                    /* Pegada al extremo izquierdo del menú */
+    top: 50%;
+    transform: translateY(-50%);/* Centrado vertical perfecto */
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 8px var(--cyber-cyan));
+}
+
+/* El título se queda perfectamente en medio */
 .card-header h2 {
+    display: inline-block;      /* Se comporta como texto centrado */
+    margin: 0;
+    line-height: 60px;          /* Centrado vertical perfecto con respecto a la altura */
     font-family: 'Rajdhani', sans-serif;
     font-weight: 700;
     font-size: 2rem;
     letter-spacing: 3px;
-    margin: 0;
     color: #fff;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
@@ -435,3 +457,17 @@ BOTÓN DESACTIVADO
     transform:none;
 
 }
+
+/* Nuevo contenedor para mantener juntos el logo izquierdo y el texto */
+.header-title-wrapper {
+    display: block;
+    text-align: left;
+}
+
+/* Forzamos a que el logo y el h2 se comporten como celdas alineadas verticalmente en el centro */
+.header-title-wrapper .header-left-img,
+.header-title-wrapper h2 {
+    display: table-cell;
+    vertical-align: middle;
+}
+
