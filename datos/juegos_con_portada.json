@@ -2998,5 +2998,548 @@
         "descripcion": "Explora los últimos vestigios de la humanidad en una megaestructura interconectada, surrealista, brutal e implacable.",
         "url_juego": "https://www.bleakfaith.com",
         "portada_url": "https://media.rawg.io/media/games/bleakfaith.jpg"
+    },
+    {
+        "id": 171,
+        "titulo": "Chess Ultra",
+        "tipo": "estrategia",
+        "modo": "un_jugador",
+        "plataforma": [
+            "pc",
+            "playstation",
+            "xbox",
+            "nintendo"
+        ],
+        "genero": "indie",
+        "clasificacion": "e",
+        "anio_lanzamiento": 2017,
+        "calificacion": 4.5,
+        "precio": 12.99,
+        "descripcion": "El juego de ajedrez definitivo con impresionantes visuales en 4K, multijugador y soporte para realidad virtual.",
+        "url_juego": "https://www.ripstone.com",
+        "portada_url": "https://media.rawg.io/media/games/333/333555aaaa.jpg"
+    },
+    {
+        "id": 172,
+        "titulo": "TrackMania Free",
+        "tipo": "deporte",
+        "modo": "multijugador",
+        "plataforma": [
+            "pc",
+            "playstation",
+            "xbox"
+        ],
+        "genero": "open_world",
+        "clasificacion": "e",
+        "anio_lanzamiento": 2020,
+        "calificacion": 4.1,
+        "precio": 0.0,
+        "descripcion": "El remake del famoso juego de carreras donde compites contra el tiempo en pistas llenas de acrobacias.",
+        "url_juego": "https://www.trackmania.com",
+        "portada_url": null
+    },
+    {
+        "id": 173,
+        "titulo": "Mobile Legends: Bang Bang",
+        "tipo": "estrategia",
+        "modo": "multijugador",
+        "plataforma": [
+            "mobile"
+        ],
+        "genero": "indie",
+        "clasificacion": "t",
+        "anio_lanzamiento": 2016,
+        "calificacion": 4.0,
+        "precio": 0.0,
+        "descripcion": "Únete a tus amigos en un MOBA 5v5 totalmente nuevo para enfrentarte a jugadores humanos reales.",
+        "url_juego": "https://www.mobilelegends.com",
+        "portada_url": null
+    },
+    {
+        "id": 174,
+        "titulo": "Slender: The Eight Pages",
+        "tipo": "aventura",
+        "modo": "un_jugador",
+        "plataforma": [
+            "pc"
+        ],
+        "genero": "survival_horror",
+        "clasificacion": "t",
+        "anio_lanzamiento": 2012,
+        "calificacion": 4.2,
+        "precio": 0.0,
+        "descripcion": "Juego indie gratuito de terror psicológico en primera persona donde debes recolectar 8 notas en un bosque oscuro.",
+        "url_juego": "https://www.parsecproductions.net",
+        "portada_url": null
+    },
+    {
+        "id": 175,
+        "titulo": "Silent Hill 2 Remake",
+        "tipo": "aventura",
+        "modo": "un_jugador",
+        "plataforma": [
+            "pc",
+            "playstation"
+        ],
+        "genero": "survival_horror",
+        "clasificacion": "m",
+        "anio_lanzamiento": 2024,
+        "calificacion": 4.8,
+        "precio": 69.99,
+        "descripcion": "Habiendo recibido una carta de su difunta esposa, James se dirige al lugar donde compartieron tantos recuerdos.",
+        "url_juego": "https://www.konami.com/silenthill/2remake",
+        "portada_url": null
+    },
+    {
+        "id": 176,
+        "titulo": "Fallout: New Vegas",
+        "tipo": "rol",
+        "modo": "un_jugador",
+        "plataforma": [
+            "pc",
+            "playstation",
+            "xbox"
+        ],
+        "genero": "open_world",
+        "clasificacion": "m",
+        "anio_lanzamiento": 2010,
+        "calificacion": 4.8,
+        "precio": 9.99,
+        "descripcion": "Siente el calor de Vegas en este RPG postapocalíptico masivo donde tus elecciones definen el destino del yermo.",
+        "url_juego": "https://fallout.bethesda.net",
+        "portada_url": null
+    },
+    {
+        "id": 177,
+        "titulo": "Mario Kart Tour",
+        "tipo": "deporte",
+        "modo": "multijugador",
+        "plataforma": [
+            "mobile"
+        ],
+        "genero": "open_world",
+        "clasificacion": "e",
+        "anio_lanzamiento": 2019,
+        "calificacion": 4.0,
+        "precio": 0.0,
+        "descripcion": "Compite con jugadores de todo el mundo en circuitos inspirados en ciudades del mundo real y clásicos de Mario Kart.",
+        "url_juego": "https://mariokarttour.com",
+        "portada_url": null
+    },
+    {
+        "id": 178,
+        "titulo": "Overcooked! 2",
+        "tipo": "estrategia",
+        "modo": "cooperativo",
+        "plataforma": [
+            "pc",
+            "playstation",
+            "xbox",
+            "nintendo"
+        ],
+        "genero": "indie",
+        "clasificacion": "e",
+        "anio_lanzamiento": 2018,
+        "calificacion": 4.7,
+        "precio": 24.99,
+        "descripcion": "Regresa al Reino de la Cebolla y reúne a tu equipo de chefs en un caótico juego de cocina cooperativo.",
+        "url_juego": "https://www.team17.com",
+        "portada_url": null
+    },
+    {
+        "id": 179,
+        "titulo": "Valorant Mobile",
+        "tipo": "accion",
+        "modo": "multijugador",
+        "plataforma": [
+            "mobile"
+        ],
+        "genero": "fps",
+        "clasificacion": "t",
+        "anio_lanzamiento": 2025,
+        "calificacion": 4.3,
+        "precio": 0.0,
+        "descripcion": "El famoso shooter táctico basado en personajes llega a dispositivos móviles con controles optimizados.",
+        "url_juego": "https://playvalorant.com",
+        "portada_url": null
+    },
+    {
+        "id": 180,
+        "titulo": "Super Mario Odyssey",
+        "tipo": "aventura",
+        "modo": "cooperativo",
+        "plataforma": [
+            "nintendo"
+        ],
+        "genero": "open_world",
+        "clasificacion": "e",
+        "anio_lanzamiento": 2017,
+        "calificacion": 4.9,
+        "precio": 59.99,
+        "descripcion": "Explora enormes reinos 3D llenos de secretos y sorpresas junto a tu nuevo aliado Cappy.",
+        "url_juego": "https://supermario.nintendo.com",
+        "portada_url": null
+    },
+    {
+        "id": 181,
+        "titulo": "Alien: Isolation",
+        "tipo": "accion",
+        "modo": "un_jugador",
+        "plataforma": [
+            "pc",
+            "playstation",
+            "xbox",
+            "nintendo",
+            "mobile"
+        ],
+        "genero": "survival_horror",
+        "clasificacion": "m",
+        "anio_lanzamiento": 2014,
+        "calificacion": 4.7,
+        "precio": 39.99,
+        "descripcion": "Descubre el verdadero significado del miedo en un ambiente de constante tensión y peligro mortal implacable.",
+        "url_juego": "https://www.alienisolation.com",
+        "portada_url": null
+    },
+    {
+        "id": 182,
+        "titulo": "Monument Valley",
+        "tipo": "estrategia",
+        "modo": "un_jugador",
+        "plataforma": [
+            "mobile"
+        ],
+        "genero": "indie",
+        "clasificacion": "e",
+        "anio_lanzamiento": 2014,
+        "calificacion": 4.8,
+        "precio": 3.99,
+        "descripcion": "Guía a una princesa a través de arquitecturas imposibles y geometrías sagradas en una aventura poética.",
+        "url_juego": "https://www.monumentvalleygame.com",
+        "portada_url": null
+    },
+    {
+        "id": 183,
+        "titulo": "SimCity 4 Deluxe",
+        "tipo": "simulacion",
+        "modo": "un_jugador",
+        "plataforma": [
+            "pc"
+        ],
+        "genero": "indie",
+        "clasificacion": "e",
+        "anio_lanzamiento": 2003,
+        "calificacion": 4.6,
+        "precio": 19.99,
+        "descripcion": "Crea, desarrolla y gestiona una región entera de ciudades interconectadas en el clásico simulador de construcción.",
+        "url_juego": "https://www.ea.com",
+        "portada_url": null
+    },
+    {
+        "id": 184,
+        "titulo": "Bloodborne",
+        "tipo": "rol",
+        "modo": "multijugador",
+        "plataforma": [
+            "playstation"
+        ],
+        "genero": "soulslike",
+        "clasificacion": "m",
+        "anio_lanzamiento": 2015,
+        "calificacion": 4.9,
+        "precio": 19.99,
+        "descripcion": "Enfrenta tus miedos mientras buscas respuestas en la antigua ciudad de Yharnam, maldecida por una plaga endémica.",
+        "url_juego": "https://www.playstation.com",
+        "portada_url": null
+    },
+    {
+        "id": 185,
+        "titulo": "Super Smash Bros. Ultimate",
+        "tipo": "accion",
+        "modo": "multijugador",
+        "plataforma": [
+            "nintendo"
+        ],
+        "genero": "tps",
+        "clasificacion": "e10",
+        "anio_lanzamiento": 2018,
+        "calificacion": 4.9,
+        "precio": 59.99,
+        "descripcion": "Iconos del videojuego se enfrentan en el combate definitivo en cualquier lugar y momento.",
+        "url_juego": "https://www.smashbros.com",
+        "portada_url": null
+    },
+    {
+        "id": 186,
+        "titulo": "EA Sports FC Mobile",
+        "tipo": "deporte",
+        "modo": "multijugador",
+        "plataforma": [
+            "mobile"
+        ],
+        "genero": "open_world",
+        "clasificacion": "e",
+        "anio_lanzamiento": 2023,
+        "calificacion": 4.0,
+        "precio": 0.0,
+        "descripcion": "Crea tu Ultimate Team™ con tus estrellas de fútbol favoritas y compite en enfrentamientos dinámicos.",
+        "url_juego": "https://www.ea.com/games/ea-sports-fc/fc-mobile",
+        "portada_url": null
+    },
+    {
+        "id": 187,
+        "titulo": "Garten of Banban",
+        "tipo": "aventura",
+        "modo": "un_jugador",
+        "plataforma": [
+            "pc",
+            "mobile"
+        ],
+        "genero": "survival_horror",
+        "clasificacion": "e10",
+        "anio_lanzamiento": 2023,
+        "calificacion": 3.4,
+        "precio": 0.0,
+        "descripcion": "Explora el misterioso jardín de infancia de Banban mientras buscas a tu hijo desaparecido.",
+        "url_juego": "https://euphoricbrothers.com",
+        "portada_url": null
+    },
+    {
+        "id": 188,
+        "titulo": "Nioh 2",
+        "tipo": "rol",
+        "modo": "cooperativo",
+        "plataforma": [
+            "pc",
+            "playstation"
+        ],
+        "genero": "soulslike",
+        "clasificacion": "m",
+        "anio_lanzamiento": 2020,
+        "calificacion": 4.7,
+        "precio": 39.99,
+        "descripcion": "Domina las mortales artes del samurái como un mercenario mitad humano y mitad yokai en el Japón feudal.",
+        "url_juego": "https://www.playstation.com",
+        "portada_url": null
+    },
+    {
+        "id": 189,
+        "titulo": "Amnesia: The Dark Descent",
+        "tipo": "aventura",
+        "modo": "un_jugador",
+        "plataforma": [
+            "pc",
+            "playstation",
+            "xbox",
+            "nintendo"
+        ],
+        "genero": "survival_horror",
+        "clasificacion": "m",
+        "anio_lanzamiento": 2010,
+        "calificacion": 4.6,
+        "precio": 19.99,
+        "descripcion": "Un juego de supervivencia en primera persona centrado en la inmersión, el descubrimiento y vivir una pesadilla.",
+        "url_juego": "https://frictionalgames.com",
+        "portada_url": null
+    },
+    {
+        "id": 190,
+        "titulo": "Metal Gear Solid V: The Phantom Pain",
+        "tipo": "accion",
+        "modo": "un_jugador",
+        "plataforma": [
+            "pc",
+            "playstation",
+            "xbox"
+        ],
+        "genero": "tps",
+        "clasificacion": "m",
+        "anio_lanzamiento": 2015,
+        "calificacion": 4.8,
+        "precio": 19.99,
+        "descripcion": "Usa sigilo, táctica y libertad de acción táctica en entornos de mundo abierto en la era de la Guerra Fría.",
+        "url_juego": "https://www.konami.com/mgs/mgsv",
+        "portada_url": null
+    },
+    {
+        "id": 191,
+        "titulo": "Age of Empires IV",
+        "tipo": "estrategia",
+        "modo": "multijugador",
+        "plataforma": [
+            "pc",
+            "xbox"
+        ],
+        "genero": "indie",
+        "clasificacion": "t",
+        "anio_lanzamiento": 2021,
+        "calificacion": 4.6,
+        "precio": 39.99,
+        "descripcion": "Uno de los juegos de estrategia en tiempo real más queridos regresa a la gloria con imperios históricos épicos.",
+        "url_juego": "https://www.ageofempires.com",
+        "portada_url": null
+    },
+    {
+        "id": 192,
+        "titulo": "Shadow of the Colossus (Remake)",
+        "tipo": "aventura",
+        "modo": "un_jugador",
+        "plataforma": [
+            "playstation"
+        ],
+        "genero": "open_world",
+        "clasificacion": "t",
+        "anio_lanzamiento": 2018,
+        "calificacion": 4.9,
+        "precio": 19.99,
+        "descripcion": "Viaja por paisajes antiguos para derribar criaturas gigantescas y devolver la vida a una chica.",
+        "url_juego": "https://www.playstation.com",
+        "portada_url": null
+    },
+    {
+        "id": 193,
+        "titulo": "Free Fire",
+        "tipo": "accion",
+        "modo": "multijugador",
+        "plataforma": [
+            "mobile"
+        ],
+        "genero": "tps",
+        "clasificacion": "t",
+        "anio_lanzamiento": 2017,
+        "calificacion": 4.1,
+        "precio": 0.0,
+        "descripcion": "Un juego de disparos de supervivencia disponible en móviles donde cada partida de 10 minutos te coloca en una isla remota.",
+        "url_juego": "https://ff.garena.com",
+        "portada_url": null
+    },
+    {
+        "id": 194,
+        "titulo": "Lords of the Fallen (2023)",
+        "tipo": "rol",
+        "modo": "cooperativo",
+        "plataforma": [
+            "pc",
+            "playstation",
+            "xbox"
+        ],
+        "genero": "soulslike",
+        "clasificacion": "m",
+        "anio_lanzamiento": 2023,
+        "calificacion": 4.0,
+        "precio": 59.99,
+        "descripcion": "Una vasta aventura RPG en dos mundos paralelos interconectados para derrocar al dios demonio Adyr.",
+        "url_juego": "https://lordsofthefallen.com",
+        "portada_url": null
+    },
+    {
+        "id": 195,
+        "titulo": "Need for Speed Unbound",
+        "tipo": "deporte",
+        "modo": "multijugador",
+        "plataforma": [
+            "pc",
+            "playstation",
+            "xbox"
+        ],
+        "genero": "open_world",
+        "clasificacion": "t",
+        "anio_lanzamiento": 2022,
+        "calificacion": 3.9,
+        "precio": 69.99,
+        "descripcion": "Compite contra el tiempo, burla a la policía y participa en las eliminatorias semanales para llegar a The Grand.",
+        "url_juego": "https://www.ea.com/games/need-for-speed/need-for-speed-unbound",
+        "portada_url": null
+    },
+    {
+        "id": 196,
+        "titulo": "Starcraft II: Wings of Liberty",
+        "tipo": "estrategia",
+        "modo": "multijugador",
+        "plataforma": [
+            "pc"
+        ],
+        "genero": "indie",
+        "clasificacion": "t",
+        "anio_lanzamiento": 2010,
+        "calificacion": 4.8,
+        "precio": 0.0,
+        "descripcion": "Dirige las fuerzas Terran en el conflicto intergaláctico definitivo de estrategia en tiempo real.",
+        "url_juego": "https://starcraft2.blizzard.com",
+        "portada_url": null
+    },
+    {
+        "id": 197,
+        "titulo": "Dead by Daylight Mobile",
+        "tipo": "accion",
+        "modo": "multijugador",
+        "plataforma": [
+            "mobile"
+        ],
+        "genero": "survival_horror",
+        "clasificacion": "m",
+        "anio_lanzamiento": 2020,
+        "calificacion": 4.2,
+        "precio": 0.0,
+        "descripcion": "Un juego de terror multijugador asimétrico 4v1 donde un jugador asume el rol de un Asesino salvaje.",
+        "url_juego": "https://www.dbdmobile.com",
+        "portada_url": null
+    },
+    {
+        "id": 198,
+        "titulo": "Company of Heroes 3",
+        "tipo": "estrategia",
+        "modo": "un_jugador",
+        "plataforma": [
+            "pc",
+            "playstation",
+            "xbox"
+        ],
+        "genero": "indie",
+        "clasificacion": "m",
+        "anio_lanzamiento": 2023,
+        "calificacion": 4.0,
+        "precio": 59.99,
+        "descripcion": "Supera a tus oponentes en el teatro de operaciones del Mediterráneo en la experiencia táctica definitiva.",
+        "url_juego": "https://www.companyofheroes.com",
+        "portada_url": null
+    },
+    {
+        "id": 199,
+        "titulo": "Call of Duty: Warzone Mobile",
+        "tipo": "accion",
+        "modo": "multijugador",
+        "plataforma": [
+            "mobile"
+        ],
+        "genero": "fps",
+        "clasificacion": "m",
+        "anio_lanzamiento": 2024,
+        "calificacion": 4.1,
+        "precio": 0.0,
+        "descripcion": "Compite en tiroteos reales de alto nivel al estilo de Call of Duty en este Battle Royale masivo en dispositivos móviles.",
+        "url_juego": "https://www.callofduty.com/playnow/warzonemobile",
+        "portada_url": null
+    },
+    {
+        "id": 200,
+        "titulo": "Asphalt 9: Legends",
+        "tipo": "deporte",
+        "modo": "multijugador",
+        "plataforma": [
+            "pc",
+            "playstation",
+            "xbox",
+            "nintendo",
+            "mobile"
+        ],
+        "genero": "open_world",
+        "clasificacion": "e",
+        "anio_lanzamiento": 2018,
+        "calificacion": 4.3,
+        "precio": 0.0,
+        "descripcion": "Pisa a fondo el acelerador y compite con superdeportivos reales en impresionantes ubicaciones de todo el mundo.",
+        "url_juego": "https://www.gameloft.com",
+        "portada_url": null
     }
 ]
