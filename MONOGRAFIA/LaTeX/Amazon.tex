@@ -514,6 +514,30 @@ Disponibilidad global & Cifrado de la información\\
 \subsection{Proyectos Disruptivos y Planes Futuros}
 \subsection{Principios de Liderazgo y Sostenibilidad Ambiental}
 
+\subsection{Consumo de Agua y Gestión Sostenible en los Centros de Datos de AWS}
+El vertiginoso crecimiento de la infraestructura de computación en la nube ---acelerado exponencialmente por el despliegue de modelos de inteligencia artificial generativa y el procesamiento de macrodatos--- ha puesto bajo un estricto escrutinio el impacto ecológico de los centros de datos, con especial énfasis en el consumo de recursos hídricos locales \cite{brand_water_metrics_2025}. Históricamente, la disipación térmica de los bastidores (\textit{racks}) de alta densidad ha dependido de sistemas evaporativos que demandan millones de litros de agua dulce para evitar el estrangulamiento térmico del \textit{hardware}. Como respuesta a esta problemática, Amazon Web Services (AWS) formalizó un compromiso vinculante denominado \textit{Water Positive} (Water+) hacia el año 2030, el cual establece que la compañía devolverá de manera neta a las comunidades y cuencas hidrográficas una cantidad de agua superior a la consumida de forma directa en sus operaciones de infraestructura \cite{aws_water_positive_2022}.
+
+\subsubsection{Métricas de Eficiencia Hídrica: Water Usage Effectiveness (WUE)}
+
+El indicador internacional estandarizado para auditar el desempeño hídrico de una instalación de TI es la Efectividad en el Uso del Agua (\textit{Water Usage Effectiveness}, WUE), la cual evalúa numéricamente la relación entre el volumen de agua consumido anualmente y la energía eléctrica entregada a la carga informática, expresada mediante la ecuación \ref{eq:wue} \cite{brand_water_metrics_2025}:
+
+\begin{equation}
+\label{eq:wue}
+\text{WUE} = \frac{\text{Consumo de Agua Anual (Litros)}}{\text{Energía de los Equipos de TI (kWh)}}
+\end{equation}
+
+Mientras que el promedio estimado para la industria de centros de datos en regiones desarrolladas como los Estados Unidos ronda los 0.36 L/kWh, las optimizaciones de diseño mecánico de AWS han reducido su huella significativamente \cite{brand_water_metrics_2025}. Según auditorías de sostenibilidad, AWS alcanzó una métrica promedio global de 0.15 L/kWh, consolidando una reducción interanual de la intensidad hídrica del 17\% \cite{brand_water_metrics_2025}. En subregiones geográficas con configuraciones de clima templado o infraestructuras heredadas maduras (como el norte de Virginia), la optimización térmica permite alcanzar registros operativos locales que oscilan estrictamente entre 0.12 y 0.06 L/kWh \cite{amazon_sustainability_2024}.
+
+\subsubsection{Estrategias e Ingeniería de Mitigación Operativa}
+
+Para cumplir con la planificación estratégica hacia el año 2030, AWS articula su gestión hídrica en cuatro pilares de ingeniería y responsabilidad corporativa \cite{aws_water_positive_2022}:
+
+\begin{enumerate}
+    \item \textbf{Refrigeración por Aire Exterior (\textit{Free Air Cooling}):} Con el fin de mitigar la evaporación directa de agua, la arquitectura de enfriamiento de AWS se fundamenta en sistemas de economizadores del lado del aire. Esta tecnología aprovecha las corrientes de aire fresco del exterior para ventilar las salas de servidores, reduciendo la necesidad de activar las torres de enfriamiento por evaporación durante aproximadamente el 90\% del año en climas óptimos \cite{aws_water_positive_2022}. Asimismo, se incorporan plataformas de análisis basadas en el Internet de las Cosas (IoT) para monitorizar flujos y prevenir fugas de manera automatizada.
+    \item \textbf{Transición hacia Fuentes No Potables:} Con el objetivo de proteger el suministro de agua de consumo urbano, los complejos hiperescalables priorizan la diversificación de fuentes de agua industrial, integrando el uso de agua reciclada, aguas residuales tratadas no aptas para el consumo humano y sistemas avanzados de captación pluvial \cite{amazon_sustainability_2024}.
+    \item \textbf{Devolución Comunitaria del Agua de Rechazo:} Una vez que el agua en circuito cerrado alcanza sus límites de saturación mineral o ciclos de concentración térmica y no puede recircular más, AWS implementa sistemas de desvío productivo. Por ejemplo, en los distritos agrícolas del estado de Oregón, hasta el 96\% del agua residual de enfriamiento es tratada y donada a agricultores colindantes para el riego directo de cultivos alimentarios \cite{aws_water_positive_2022}.
+    \item \textbf{Inversión en Proyectos de Reabastecimiento (\textit{Replenishment}):} La compañía compensa su balance remanente financiando infraestructuras de restauración ecológica en cuencas hidrográficas con alto estrés hídrico. Estos esfuerzos abarcan desde la remoción de flora invasora consumidora de agua hasta el saneamiento de redes rurales en países vulnerables como India, Indonesia, Brasil y regiones específicas del Reino Unido \cite{aws_water_positive_2022, amazon_sustainability_2024}.
+\end{enumerate}
 \newpage
 
 \section{Capítulo IV}
