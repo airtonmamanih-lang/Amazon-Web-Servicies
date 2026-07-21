@@ -121,19 +121,47 @@ style=apa
 \tableofcontents
 \newpage
 
-% ==============================
-% CONTENIDO
-% ==============================
-
+% =========================================================================
+% 1. INTRODUCCIÓN
+% =========================================================================
 \section{Introducción}
-La computación en la nube ha cambiado por completo cómo se manejan los sistemas de información a nivel mundial. Al permitir el acceso a recursos informáticos a través de Internet de manera flexible y bajo demanda, este modelo cambió el enfoque tradicional de adquirir costosos servidores físicos (CapEx) por un esquema de pago por uso basado en gastos operativos (OpEx) \parencite{mell2011}. Actualmente, este entramado digital sostiene operaciones críticas que van desde la banca transaccional y las plataformas de entretenimiento, hasta la administración gubernamental y el desarrollo de la inteligencia artificial. En este escenario, Amazon Web Services (AWS) destaca como el actor más influyente. Desde su aparición en 2006, la compañía no solo fue pionera en comercializar estos servicios, sino que se consolidó como el líder de la industria, concentrando cerca de un tercio del mercado global de infraestructura pública \parencite{gartner2024, statista2025}.
 
-Sin embargo, la escala alcanzada por AWS plantea debates que van más allá del ámbito puramente técnico o empresarial. Al estar una porción tan masiva del Internet moderno centralizada en una sola corporación privada, surgen dudas razonables sobre la seguridad sistémica de la red mundial, el peligro del monopolio tecnológico y las barreras reales para la libre competencia \parencite{armbrust2010}. Por esta razón, esta monografía examina el ecosistema de AWS desde una perspectiva técnica pero también analítica y crítica, evaluando las implicaciones de su dominio en la sociedad contemporánea.
+La infraestructura tecnológica ha evolucionado de forma acelerada en las últimas décadas, debido a la migración de sistemas locales hacia entornos virtuales remotos.
 
-Para lograr esto, la monografía analiza diferentes aspectos de la plataforma. Primero, repasaremos los antecedentes históricos de Amazon y los conceptos teóricos fundamentales que definen los modelos de servicio (IaaS, PaaS, SaaS) y de despliegue en la nube. Posteriormente, se detalla la ingeniería física de sus centros de datos, explicando cómo funcionan las Regiones y Zonas de Disponibilidad para garantizar la tolerancia a fallos, junto con el papel de innovaciones en virtualización como el Sistema Nitro. Asimismo, se exploran los desarrollos más recientes de AWS en la frontera tecnológica, incluyendo el diseño de chips propios y herramientas orientadas a la Inteligencia Artificial Generativa. Finalmente, el trabajo analiza las principales controversias del ecosistema, como los costos ocultos, el riesgo de dependencia del proveedor (\textit{vendor lock-in}), el impacto de sus caídas globales y las propuestas de regulación antimonopolio por parte de los gobiernos. De este modo, este estudio busca brindar a los estudiantes de Introducción a la Computación una base sólida para entender el rol estructural que AWS juega en el mundo contemporáneo.
-\newpage
+Este avance se refleja principalmente en la computación en la nube, un modelo que ha redefinido el almacenamiento, procesamiento y distribución de datos en las organizaciones actuales.
 
-\section{Capítulo I: El Paradigma de la Computación en la Nube}
+\subsection{Contextualización}
+
+El procesamiento de datos pasó de un enfoque tradicional basado en la compra de hardware físico local (infraestructura \textit{On-Premise}) a un entorno flexible y accesible a través de Internet. Este cambio reestructuró la gestión financiera de las empresas al sustituir las inversiones de capital fijas y de alta depreciación (CapEx) por un esquema de gastos operativos variables basados en el consumo real (OpEx) \parencite{mell2011}. 
+
+En este mercado, Amazon Web Services (AWS) destaca como el proveedor con mayor adopción a nivel global. Desde su lanzamiento comercial en 2006, AWS fue pionero en ofrecer servicios de infraestructura elástica y actualmente mantiene cerca del 32\% de la cuota del mercado mundial de nube pública \parencite{gartner2024, statista2025}. Su arquitectura soporta desde plataformas de entretenimiento masivo y banca transaccional, hasta entornos de desarrollo para Inteligencia Artificial Generativa y sistemas gubernamentales.
+
+\subsection{Justificación}
+
+El estudio de AWS es clave para la ingeniería y las ciencias de la computación debido a su adopción masiva en la industria actual. Comprender su funcionamiento permite evaluar conceptos esenciales como la abstracción de hardware, la virtualización avanzada y la alta disponibilidad en entornos de producción. 
+
+No obstante, la centralización de gran parte de la infraestructura de Internet en una sola corporación privada plantea riesgos técnicos y operativos que requieren una evaluación detallada. Este trabajo se justifica al ofrecer una perspectiva completa: analiza las soluciones de ingeniería que hacen de AWS una plataforma tolerante a fallos y, al mismo tiempo, examina de forma crítica las implicaciones sobre la dependencia del proveedor (\textit{vendor lock-in}), la seguridad de los datos y la competencia en el mercado tecnológico actual \parencite{armbrust2010}.
+
+\subsection{Objetivos del estudio}
+
+\subsubsection{Objetivo General}
+Analizar de manera integral el ecosistema de Amazon Web Services (AWS), evaluando sus fundamentos teóricos, su arquitectura de infraestructura y el impacto de su dominio en el mercado tecnológico actual.
+
+\subsubsection{Objetivos Específicos}
+\begin{itemize}
+    \item Analizar la evolución histórica de AWS y su relación con los modelos de servicio (IaaS, PaaS, SaaS) y de despliegue según los estándares del NIST.
+    \item Detallar la infraestructura física y los mecanismos de virtualización de AWS, explicando el funcionamiento de Regiones, Zonas de Disponibilidad y el Sistema AWS Nitro.
+    \item Evaluar los avances tecnológicos de la plataforma en el desarrollo de silicio propio y herramientas orientadas a la Inteligencia Artificial Generativa.
+    \item Examinar las principales limitaciones del ecosistema, incluyendo el análisis de costos, las caídas de red y los desafíos de regulación antimonopolio.
+\end{itemize}
+
+\subsection{Metodología del estudio}
+
+Esta investigación se desarrolla bajo un enfoque cualitativo, de diseño no experimental y nivel descriptivo. La metodología se basa en la revisión bibliográfica de fuentes técnicas y académicas. Las fuentes revisadas incluyen estándares internacionales del Instituto Nacional de Estándares y Tecnología (NIST), reportes de mercado (Gartner, Statista), artículos de ciencias de la computación y la documentación oficial de AWS. La información se clasificó y sintetizó para desarrollar el marco teórico y el análisis crítico de las secciones posteriores.
+
+
+
+\section{Capítulo I}
 
 Este capítulo sirve como base teórica del trabajo. El objetivo es entender cómo nació, cambió y se consolidó el modelo de computación en la nube como el motor de la infraestructura digital del siglo XXI. Para ello, se examina en primer lugar el trayecto evolutivo de Amazon.com, Inc., analizando los factores operativos e internos que impulsaron su metamorfosis de comercio minorista a líder tecnológico global con el nacimiento de AWS. Posteriormente, se abordan las bases normativas e internacionales del paradigma \textit{cloud} según los estándares del NIST, para finalmente catalogar de forma analítica los diversos modelos de despliegue y de servicio que articulan el desarrollo de software contemporáneo. Con este recorrido, se establecen los cimientos conceptuales necesarios para el desglose técnico y crítico de las secciones posteriores.
 
@@ -480,11 +508,44 @@ Disponibilidad global & Cifrado de la información\\
 \newpage
 
 \section{Capítulo III}
+
 \subsection{AWS como Motor de la Economía Digital}
+
+AWS revolucionó los modelos de servicio en la nube al popularizar comercialmente el concepto \textbf{XaaS} (\textit{Anything as a Service}), que en pocas palabras expresa que \textbf{cualquier recurso tecnológico puede ser ofrecido y consumido como un servicio}. Esta filosofía nació con un objetivo claro: resolver los históricos problemas de \textbf{alto costo y alta complejidad} que implicaban gestionar y configurar infraestructuras TI tradicionales.
+
+Gracias a su amplio portafolio de servicios, AWS ha democratizado el acceso a la tecnología. En este sentido, ha sido un habilitador clave para las \textbf{startups}, modelos de negocio que suelen operar con presupuestos reducidos y necesitan salir al mercado con rapidez. Con AWS, estas empresas ya no se ven limitadas por su infraestructura TI, ya que pueden desplegar y escalar aplicaciones en minutos sin realizar fuertes inversiones iniciales.
+
+Además, AWS ha roto una barrera histórica: \textbf{pone al alcance de cualquier emprendedor tecnologías que, inicialmente, solo estaban disponibles para las gigantes del mercado}, como inteligencia artificial, machine learning, bases de datos distribuidas o computación de alto rendimiento. De este modo, nivela el campo de juego y fomenta la innovación sin importar el tamaño de la organización.
+
+AWS se ha convertido en un pilar indispensable de la economía digital al ser la plataforma elegida por los gigantes tecnológicos que mueven el mundo: \textbf{Netflix} (con más de 100.000 instancias), \textbf{Twitch}, \textbf{LinkedIn}, \textbf{Facebook}, \textbf{Twitter}, además de entidades como la NASA Su adopción masiva, más del 90\% del Fortune 100 utiliza su red de socios, y los ahorros operativos que genera (como el 50\% de reducción logrado por General Electric o Unilever) demuestran que AWS no solo ofrece infraestructura, sino que \textbf{acelera la innovación, reduce costes y nivela el campo de juego}, permitiendo que tanto startups como corporaciones globales compitan con la misma potencia tecnológica en la era digital.
+
 \subsection{Innovación en Silicio Propio}
-\subsection{La Frontera de la Inteligencia Artificial Generativa}
+
+La estrategia de hardware de AWS ha evolucionado de un modelo de compra a una integración vertical diseñada para romper la dependencia de terceros y optimizar el rendimiento por dólar invertido. Históricamente, NVIDIA ha consolidado un monopolio casi absoluto en el mercado de aceleradores informáticos, controlando aproximadamente cuatro de cada cinco unidades distribuidas globalmente, lo que ha generado una dependencia que encarece los costos de entrenamiento de modelos a gran escala.
+
+En respuesta a este escenario, AWS ha comenzado a comercializar sus chips \textbf{Trainium}, posicionándolos como una alternativa de alto rendimiento específicamente diseñada para el entrenamiento de modelos de Inteligencia Artificial. A diferencia de las soluciones de propósito general, Trainium optimiza los ciclos de cómputo en redes neuronales y reduce la latencia de transferencia de datos entre los núcleos de cómputo y la memoria de alta fidelidad. De este modo, AWS no solo compite en precio, sino también en \textbf{eficiencia energética}, tal como ya lo hace con los procesadores \textbf{Graviton}.
+
+Con esta estrategia, la compañía no solo reduce costes operativos para sus clientes, sino que también refuerza su posición como proveedor integral, desafiando el dominio de NVIDIA y ofreciendo una alternativa viable que combina rendimiento, eficiencia y soberanía tecnológica dentro de su ecosistema.
+
 \subsection{Proyectos Disruptivos y Planes Futuros}
-\subsection{Principios de Liderazgo y Sostenibilidad Ambiental}
+
+La estrategia de innovación de AWS se orienta a acercar la computación a quien la usa, rompiendo con la idea de depender solo de grandes centros de datos. En lugar de esperar a que los usuarios lleguen a una nube central, AWS propone reducir la latencia y abrir nuevas posibilidades explorando tecnologías emergentes como la computación cuántica. A continuación describo tres iniciativas que encajan con esa visión.
+
+\begin{itemize}
+\item \textbf{AWS Local Zones:} La idea es llevar la infraestructura de AWS más cerca de las ciudades, industrias y equipos de TI, colocándola en ubicaciones periféricas cercanas a los usuarios. De este modo, operaciones que requieren respuestas en milisegundos, como juegos, streaming de video en alta definición y ciertas aplicaciones financieras, pueden funcionar de forma más fluida sin depender únicamente de las regiones centrales muy alejadas geográficamente.
+
+\item \textbf{AWS Wavelength:} Pensado para redes 5G, Wavelength inserta los servicios de AWS directamente en la periferia de las redes de los operadores de telecomunicaciones. En lugar de que los datos tengan que viajar hasta un centro de datos lejano y volver, el procesamiento ocurre junto a la infraestructura de la red, en el borde. Esto reduce enormemente la latencia, a menos de 10 milisegundos en muchos casos, y facilita usos como la inferencia de IA en el borde, juegos en la nube, realidad aumentada y diagnóstico médico remoto.
+
+\item \textbf{Amazon Braket:} Braket es la entrada de AWS a la computación cuántica. Es un servicio totalmente gestionado que da acceso a diferentes tipos de procesadores cuánticos y a simuladores clásicos para pruebas. Su propósito es democratizar la experimentación con algoritmos cuánticos, permitiendo a investigadores y desarrolladores explorar soluciones a problemas complejos de optimización, modelado molecular y criptografía, sin la necesidad de invertir en una infraestructura cuántica propia.
+\end{itemize}
+
+\subsection{AWS y la IA Generativa}
+
+La Inteligencia AI Generativa es, en esencia, una rama de la IA que no solo analiza o clasifica datos, sino que crea contenido nuevo. Si la IA tradicional se encarga de decirte si una imagen contiene un gato o un perro, la IA generativa puede dibujar un gato que nunca antes ha existido, escribir un poema con tu estilo o componer una melodía. Esta capacidad se obtiene entrenando algoritmos de aprendizaje profundo con volúmenes masivos de datos —textos, imágenes, códigos o audio— para que aprendan patrones, estructuras y relaciones complejas. Una vez entrenados, estos modelos, denominados modelos fundacionales (entre ellos destacan los Large Language Models o LLM), generan respuestas originales y contextualmente coherentes gracias a arquitecturas de Transformadores, que procesan secuencias de datos con gran eficiencia. Su valor real no está solo en interpretar el mundo, sino en recrearlo, lo que abre posibilidades antes impensables en creatividad, automatización y toma de decisiones.
+
+La relación entre AWS y la IA Generativa es profundamente simbiótica, ya que esta tecnología exige potencia de cómputo, capacidad de almacenamiento y velocidad de red que solo una infraestructura de hiperescala como la de AWS puede ofrecer. AWS actúa como el habilitador industrial de esta revolución tecnológica sobre tres pilares fundamentales: la democratización, que permite a empresas de cualquier tamaño acceder a modelos fundacionales sin construir infraestructura desde cero; la soberanía de datos, que garantiza la integración segura de modelos públicos con datos privados y propietarios, crucial en entornos regulados; y la escalabilidad, que permite ejecutar inferencias —el uso de los modelos para generar respuestas— a millones de usuarios simultáneamente, manteniendo una baja latencia esencial para aplicaciones en tiempo real.
+
+Para hacer concreta esta visión, AWS ha reconfigurado su oferta y desarrollado cuatro hitos clave que reducen drásticamente las barreras de entrada a la IA Generativa. El primero es Amazon Bedrock, un servicio gestionado que ofrece, mediante una única API, acceso a modelos fundacionales de alto rendimiento, tanto propios como Amazon Titan, como de terceros incluyendo Anthropic, Meta y Mistral, lo que permite a los ingenieros seleccionar el modelo más adecuado según costo, precisión y latencia sin complicaciones operativas. En segundo lugar, AWS ha desarrollado chips especializados: Trainium para entrenamiento e Inferentia para inferencia, que atacan directamente el problema de los costos energéticos y económicos de ejecutar modelos de lenguaje complejos, ofreciendo un rendimiento optimizado por dólar invertido. Luego viene SageMaker JumpStart, un centro de despliegue donde los desarrolladores pueden encontrar, probar y desplegar modelos preentrenados con un solo clic, automatizando la configuración del entorno de MLOps y acelerando considerablemente el time-to-market. Finalmente, AWS ha facilitado la arquitectura de sistemas RAG (Retrieval-Augmented Generation) dentro de su ecosistema, permitiendo que los modelos de IA consulten bases de datos como Amazon Aurora o el Vector Engine para OpenSearch en tiempo real Esta capacidad es fundamental porque mitiga el problema de las alucinaciones de los modelos, al anclar las respuestas de la IA en datos reales y actualizados de la organización, garantizando resultados más precisos y confiables
 
 \newpage
 
