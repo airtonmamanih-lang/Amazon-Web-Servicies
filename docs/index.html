@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NextGen | Recomendación de Juegos</title>
+    <!-- Fuentes e Iconos Premium -->
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght=500;600;700&family=Inter:wght=300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Fondo dinámico con luces neón difuminadas -->
+    <div class="neon-bg-glow"></div>
+
+    <main class="container">
+        <!-- Tarjeta Premium con Efecto Glassmorphism -->
+        <section class="filter-card-premium">
+           <div class="card-header">
+                <!-- 1. Imagen Izquierda -->
+                <img src="unmsm.webp" alt="Logo Izquierda" class="header-left-img">
+    
+                <!-- 2. Texto Central -->
+                <h2>RECOMENDACIÓN DE JUEGOS</h2>
+    
+                <!-- 3. Imagen Derecha (Gatito) -->
+                <img src="gato-meme.jpeg" alt="Logo NextGen" class="header-right-img">
+            </div>
+            
+            <form id="filter-form">
+                <div class="grid-filters">
+                    
+                    <!-- TIPO DE EXPERIENCIA -->
+                    <div class="form-group">
+                        <label for="tipo"><i class="fa-solid fa-shapes"></i> Tipo</label>
+                        <select id="tipo" name="tipo">
+                            <option value="">Elegir una opción</option>
+                            <option value="accion">Acción</option>
+                            <option value="aventura">Aventura</option>
+                            <option value="estrategia">Estrategia</option>
+                            <option value="rol">Rol (RPG)</option>
+                            <option value="simulacion">Simulación</option>
+                            <option value="deporte">Deportes / Carreras</option>
+                        </select>
+                    </div>
+
+                    <!-- MODO DE JUEGO -->
+                    <div class="form-group">
+                        <label for="modo"><i class="fa-solid fa-users"></i> Modo</label>
+                        <select id="modo" name="modo">
+                            <option value="">Elegir una opción</option>
+                            <option value="multijugador">Multijugador Online</option>
+                            <option value="un_jugador">Un jugador (Story Mode)</option>
+                            <option value="cooperativo">Cooperativo (Co-op)</option>
+                            <option value="battle_royale">Battle Royale</option>
+                        </select>
+                    </div>
+
+                    <!-- PLATAFORMA -->
+                    <div class="form-group">
+                        <label for="plataforma"><i class="fa-solid fa-display"></i> Plataforma</label>
+                        <select id="plataforma" name="plataforma">
+                            <option value="">Elegir una opción</option>
+                            <option value="pc">PC (Steam / Epic)</option>
+                            <option value="playstation">PlayStation 5 / PS4</option>
+                            <option value="xbox">Xbox Series X|S / One</option>
+                            <option value="nintendo">Nintendo Switch</option>
+                            <option value="mobile">Mobile (Android / iOS)</option>
+                        </select>
+                    </div>
+
+                    <!-- GÉNERO ESPECÍFICO -->
+                    <div class="form-group">
+                        <label for="genero"><i class="fa-solid fa-crosshairs"></i> Género</label>
+                        <select id="genero" name="genero">
+                            <option value="">Elegir una opción</option>
+                            <option value="fps">FPS (Disparos en 1ª Persona)</option>
+                            <option value="tps">TPS (Disparos en 3ª Persona)</option>
+                            <option value="open_world">Mundo Abierto</option>
+                            <option value="survival_horror">Survival Horror</option>
+                            <option value="moba">MOBA</option>
+                            <option value="soulslike">Soulslike</option>
+                            <option value="indie">Indie</option>
+                        </select>
+                    </div>
+
+                    <!-- CLASIFICACIÓN DE EDAD -->
+                    <div class="form-group">
+                        <label for="clasificacion"><i class="fa-solid fa-user-shield"></i> Clasificación</label>
+                        <select id="clasificacion" name="clasificacion">
+                            <option value="">Elegir una opción</option>
+                            <option value="e">E (Para Todos)</option>
+                            <option value="e10">E10+ (Mayores de 10)</option>
+                            <option value="t">T (Adolescentes - Teen)</option>
+                            <option value="m">M (Maduros - Mature 17+)</option>
+                            <option value="ao">AO (Solo Adultos 18+)</option>
+                        </select>
+                    </div>
+
+                    <!-- AÑO (CORREGIDO: El id ahora es 'anio' para que lo encuentre el JS) -->
+                    <div class="form-group">
+                        <label for="anio"><i class="fa-solid fa-calendar-days"></i> Desde el año</label>
+                        <input type="number" id="anio" name="anio" min="1980" max="2026" placeholder="Ej. 2020">
+                    </div>
+
+                    <!-- CALIFICACIÓN MÍNIMA (CORREGIDO: El id ahora es 'calificacion_min' para que lo encuentre el JS) -->
+                    <div class="form-group">
+                        <label for="calificacion_min"><i class="fa-solid fa-star"></i> Calif. mínima</label>
+                        <input type="number" id="calificacion_min" name="calificacion_min" min="0" max="5" step="0.1" placeholder="0.0 - 5.0">
+                    </div>
+
+                    <!-- PRECIO MÁXIMO (CORREGIDO: El id ahora es 'precio' para que lo encuentre el JS) -->
+                    <div class="form-group">
+                        <label for="precio_max"><i class="fa-solid fa-tags"></i> Precio máximo ($)</label>
+                        <input type="number" id="precio" name="precio_max" min="0" step="0.01" placeholder="Ej. 29.99">
+                    </div>
+                </div>
+
+                <button
+                    type="submit"
+                    id="btnBuscar"
+                    class="btn-buscar-neon"
+                    disabled>
+                <span>ESCANEAR BASE DE DATOS</span>
+            </button>
+            </form>
+        </section>
+
+        <!-- Contenedor de Resultados -->
+        <section id="juegos-container" class="juegos-grid">
+            <p class="placeholder-text">Sistema online. Define tus parámetros y ejecuta el comando de búsqueda para cargar los títulos seleccionados.</p>
+        </section>
+    </main>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
